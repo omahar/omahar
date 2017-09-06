@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Omaha R User Group</title>
+    <link>/page/</link>
+    <description>Recent content in Pages on Omaha R User Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About me</title>
+      <link>/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/page/about/</guid>
+      <description>My name is Inigo Montoya. I have the following qualities:
+ I rock a great mustache I&amp;rsquo;m extremely loyal to my family  What else do you need?
+my history To be honest, I&amp;rsquo;m having some trouble remembering right now, so why don&amp;rsquo;t you just watch my movie and it will answer all your questions.</description>
+    </item>
+    
+  </channel>
+</rss>
