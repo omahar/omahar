@@ -71,7 +71,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [[menu.main]]
     name = "Resources"
-    url = "page/partners/"
+    url = "page/resources/"
     weight = 4
     
 [[menu.main]]
