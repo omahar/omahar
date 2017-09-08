@@ -1,18 +1,19 @@
 baseurl = "https://username.github.io"
 DefaultContentLanguage = "en"
 #DefaultContentLanguage = "ja"
-title = "Omaha R User Group"
+title = "Omaha R Users"
 theme = "beautifulhugo"
 metaDataFormat = "yaml"
 pygmentsUseClasses = true
 pygmentCodeFences = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 #disqusShortname = "XXX"
 #googleAnalytics = "XXX"
 
 [Params]
   #subtitle = "Build a beautiful and simple website in minutes"
   logo = "img/orug_logo.png"
-  favicon = "img/favicon.ico"
+  #favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
   commit = false
   rss = true
@@ -61,32 +62,24 @@ pygmentCodeFences = true
 [[menu.main]]
     name = "About"
     url = "page/about/"
+    weight = 2
+    
+[[menu.main]]
+    name = "Presentations"
+    url = "page/presentations/"
     weight = 3
 
 [[menu.main]]
-    identifier = "samples"
-    name = "Samples"
-    weight = 2
+    name = "Projects"
+    url = "page/projects/"
+    weight = 4
 
 [[menu.main]]
-    parent = "samples"
-    name = "Big Image Sample"
-    url = "post/2017-03-07-bigimg-sample"
-    weight = 1
-
-[[menu.main]]
-    parent = "samples"
-    name = "Math Sample"
-    url = "post/2017-03-05-math-sample"
-    weight = 2
-
-[[menu.main]]
-    parent = "samples"
-    name = "Code Sample"
-    url = "post/2016-03-08-code-sample"
-    weight = 3
-
+    name = "Partners"
+    url = "page/partners/"
+    weight = 5
+    
 [[menu.main]]
     name = "Tags"
     url = "tags"
-    weight = 3
+    weight = 6
