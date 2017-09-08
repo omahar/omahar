@@ -36,7 +36,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   #email = "youremail@domain.com"
   #facebook = "username"
   #googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
-  github = "tomroh/omahar"
+  github = "omahar"
   #gitlab = "username"
   #twitter = "username"
   #reddit = "username"
@@ -55,7 +55,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   #telegram = "username"
 
 [[menu.main]]
-    name = "News"
+    name = "Home"
     url = ""
     weight = 1
 
@@ -65,21 +65,16 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     weight = 2
     
 [[menu.main]]
-    name = "Presentations"
-    url = "page/presentations/"
+    name = "Projects"
+    url = "page/projects/"
     weight = 3
 
 [[menu.main]]
-    name = "Projects"
-    url = "page/projects/"
-    weight = 4
-
-[[menu.main]]
-    name = "Partners"
+    name = "Resources"
     url = "page/partners/"
-    weight = 5
+    weight = 4
     
 [[menu.main]]
     name = "Tags"
     url = "tags"
-    weight = 6
+    weight = 5
