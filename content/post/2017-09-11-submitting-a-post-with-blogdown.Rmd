@@ -63,6 +63,7 @@ digraph workflow {
   'review' -> 'git commit'
   'review' -> 'merge'
   'merge' -> 'netlify'
+  'netlify' -> 'new post'
   
 
 }
