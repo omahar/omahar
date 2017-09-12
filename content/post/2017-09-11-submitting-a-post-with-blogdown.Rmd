@@ -1,0 +1,72 @@
+---
+title: Submitting a Post with Blogdown
+author: Thomas Roh
+date: '2017-09-11'
+slug: submitting-a-post-with-blogdown
+categories:
+  - R
+  - tutorial
+tags:
+  - blogdown
+  - R Markdown
+  - github
+  - git
+  - RStudio
+---
+
+## Set up
+
+You will first need to set up an account on [**github**](https://www.github.com) and 
+install [**git**](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+Next, make a copy of the repository into your desired workspace. I like to keep
+all of my version controlled projects under one directory. Open up a command
+terminal of your choosing and use the following:
+
+```{bash, eval = FALSE}
+cd [working directory]
+git clone https://github.com/omahar/omahar.git
+git branch [new branch]
+git checkout [new branch]
+```
+
+
+The [`blogdown`](https://bookdown.org/yihui/blogdown/) package is an R interface 
+to creating static web pages with Hugo. I will be using the 
+[**RStudio**](https://www.rstudio.com/) IDE and 
+this package to do the majority of the heavy lifting.
+
+```{r, eval = FALSE}
+devtools::install_github('rstudio/blogdown')
+```
+
+
+## Creating a New Post
+
+## Submitting a Post to the Website Repository
+
+## Workflow
+
+```{r}
+library(DiagrammeR)
+dotText <- "
+
+digraph workflow {
+
+  graph[rankdir = LR]
+
+  'git pull' -> 'new_post'
+  'new_post' -> 'git commit'
+  'git commit' -> 'git push'
+  'git push' -> 'pull request'
+  'pull request' -> 'review'
+  'review' -> 'git commit'
+  
+
+}
+"
+grViz(dotText)
+
+```
+
+
