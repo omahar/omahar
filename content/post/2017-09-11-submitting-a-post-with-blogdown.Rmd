@@ -61,6 +61,8 @@ digraph workflow {
   'git push' -> 'pull request'
   'pull request' -> 'review'
   'review' -> 'git commit'
+  'review' -> 'merge'
+  'merge' -> 'netlify'
   
 
 }
