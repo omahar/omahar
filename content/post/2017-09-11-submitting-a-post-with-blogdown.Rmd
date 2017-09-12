@@ -14,6 +14,11 @@ tags:
   - RStudio
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+
 ## Set up
 
 You will first need to set up an account on [**github**](https://www.github.com) and 
@@ -23,7 +28,8 @@ Next, make a copy of the repository into your desired workspace. I like to keep
 all of my version controlled projects under one directory. Open up a command
 terminal of your choosing and use the following:
 
-```{bash, eval = FALSE}
+
+```{bash}
 cd [working directory]
 git clone https://github.com/omahar/omahar.git
 git branch [new branch]
@@ -34,21 +40,35 @@ git push --set-upstream origin development
 
 The [`blogdown`](https://bookdown.org/yihui/blogdown/) package is an R interface 
 to creating static web pages with Hugo. I will be using the 
-[**RStudio**](https://www.rstudio.com/) IDE and 
+[**Rstudio**](https://www.rstudio.com/) IDE and 
 this package to do the majority of the heavy lifting.
 
-```{r, eval = FALSE}
+
+```{r}
 devtools::install_github('rstudio/blogdown')
 ```
 
 
 ## Creating a New Post
 
+You can use the command line to create a new post:
+
+```{r}
+blogdown::new_post('Submitting a Post with Blogdown')
+```
+
+or you can use the Rstudio addin that is provided:
+
+![](../img/new_post_addin.PNG)
+
+Blogdown supports both R Markdown or Markdown. You now have a templated
+document set up to edit. 
+
 ## Submitting a Post to the Website Repository
 
 ## Workflow
 
-```{r}
+```{r, eval = TRUE}
 library(DiagrammeR)
 dotText <- "
 
