@@ -93,7 +93,7 @@ blogdown::serve_site()
 
 ## Workflow
 
-```{r, eval = TRUE}
+```{r, eval = TRUE, echo = FALSE}
 library(DiagrammeR)
 dotText <- "
 
@@ -109,6 +109,7 @@ digraph workflow {
   
 
   'git pull' -> 'new_post' -> 'git commit' -> 'git push'
+  'git push' -> 'git commit'
   
   }
 
@@ -126,9 +127,9 @@ digraph workflow {
   graph [label = 'Web', fontsize = 50, labelloc = true]
 
   node [fontsize = 30]
-  {rank = same; 'merge', 'netlify', 'blogpost published'}
+  {rank = same; 'merge', 'netlify'}
 
-  'merge' -> 'netlify' -> 'blogpost published'
+  'merge' -> 'netlify' -> 'publish'
   }
   
 }
