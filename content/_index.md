@@ -1,2 +1,3 @@
-## Front Page Content
-`beautifulhugo` supports content on your front page. Edit `/content/_index.md` to change what appears here. Delete `/content/_index.md` if you don't want any content here.
+## Omaha R User Blog
+A collection of presentations, tutorials, announcements, and guest posts for 
+the Omaha R Community
