@@ -38,6 +38,16 @@ git push --set-upstream origin development
 ```
 
 
+After the initial set up you can open the R Project in Rstudio and use the 
+IDE to handle most of the work you will need to do in git.
+
+
+<img src = "../img/rstudio_git.png" width = "75%" height = "75%">
+
+
+***
+
+
 The [`blogdown`](https://bookdown.org/yihui/blogdown/) package is an R interface 
 to creating static web pages with Hugo. I will be using the 
 [**Rstudio**](https://www.rstudio.com/) IDE and 
@@ -57,12 +67,27 @@ You can use the command line to create a new post:
 blogdown::new_post('Submitting a Post with Blogdown')
 ```
 
+
 or you can use the Rstudio addin that is provided:
+
 
 ![](../img/new_post_addin.PNG)
 
+
 Blogdown supports both R Markdown or Markdown. You now have a templated
-document set up to edit. 
+document set up to edit. Write your post and once you are satisfied that
+you are ready to publish, re-build the site:
+
+```{r}
+blogdown::build_site()
+```
+
+Check for errors and visually inspect:
+
+```{r}
+blogdown::serve_site()
+```
+
 
 ## Submitting a Post to the Website Repository
 
@@ -74,19 +99,38 @@ dotText <- "
 
 digraph workflow {
 
-  graph[rankdir = LR]
+  graph[compound = true, center = true, rankdir = LR]
 
-  'git pull' -> 'new_post'
-  'new_post' -> 'git commit'
-  'git commit' -> 'git push'
-  'git push' -> 'pull request'
-  'pull request' -> 'review'
-  'review' -> 'git commit'
-  'review' -> 'merge'
-  'merge' -> 'netlify'
-  'netlify' -> 'new post'
+  subgraph cluster0 {
+  graph [label = 'Local Repository', fontsize = 50, labelloc = true]
+  
+  node [fontsize = 30]
+  {rank = same; 'new_post'; 'git commit'; 'git push'; 'git pull'}
   
 
+  'git pull' -> 'new_post' -> 'git commit' -> 'git push'
+  
+  }
+
+  subgraph cluster1 {
+  graph [label = 'Remote Repository', fontsize = 50, labelloc = true]
+
+  node [fontsize = 30]
+  {rank = same; 'pull request'; 'review'; 'merge'}
+  
+  'git push' -> 'pull request' -> 'review' -> 'git commit'
+  'review' -> 'merge'
+  }
+
+  subgraph cluster2 {
+  graph [label = 'Web', fontsize = 50, labelloc = true]
+
+  node [fontsize = 30]
+  {rank = same; 'merge', 'netlify', 'blogpost published'}
+
+  'merge' -> 'netlify' -> 'blogpost published'
+  }
+  
 }
 "
 grViz(dotText)
