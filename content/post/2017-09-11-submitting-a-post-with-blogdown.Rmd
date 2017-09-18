@@ -91,6 +91,15 @@ blogdown::serve_site()
 
 ## Submitting a Post to the Website Repository
 
+
+When you are ready to publish your post, you will need to head to the github 
+repository for the website. To submit your post for publication, create a pull 
+request to merge your branch with the master.
+
+
+<img src = "../img/pull_request.png" width = "75%" height = "75%">
+
+
 ## Workflow
 
 ```{r, eval = TRUE, echo = FALSE}
