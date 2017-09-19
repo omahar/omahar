@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Omaha R Users</title>
-    <link>https://username.github.io/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://username.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>R</title>
-      <link>https://username.github.io/categories/r/</link>
+      <link>/categories/r/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://username.github.io/categories/r/</guid>
+      <guid>/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorial</title>
-      <link>https://username.github.io/categories/tutorial/</link>
+      <link>/categories/tutorial/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://username.github.io/categories/tutorial/</guid>
+      <guid>/categories/tutorial/</guid>
       <description></description>
     </item>
     
