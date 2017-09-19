@@ -1,7 +1,7 @@
 ---
 title: "Resources"
 date: 2017-09-08T14:10:57-05:00
-draft: false
+draft: true
 ---
 
 ## [Omaha Analytics Forum](https://www.linkedin.com/groups/12028715)
