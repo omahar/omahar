@@ -3,82 +3,82 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://omahar.github.com/post/submitting-a-post-with-blogdown/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/post/submitting-a-post-with-blogdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://omahar.github.com/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://omahar.github.com/tags/blogdown/</loc>
-    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://omahar.github.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://omahar.github.com/tags/git/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/tags/blogdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.github.com/tags/github/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://robber-sheep-16431.netlify.com/tags/git/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.github.com/tags/markdown/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/tags/github/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.github.com/tags/netlify/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/tags/markdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.github.com/post/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/tags/netlify/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.github.com/categories/r/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/post/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.github.com/tags/r-markdown/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/categories/r/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.github.com/tags/rstudio/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/tags/r-markdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.github.com/tags/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/tags/rstudio/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.github.com/categories/tutorial/</loc>
+    <loc>https://robber-sheep-16431.netlify.com/tags/</loc>
+    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://robber-sheep-16431.netlify.com/categories/tutorial/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
