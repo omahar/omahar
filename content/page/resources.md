@@ -8,7 +8,7 @@ draft: true
 
 The Omaha Analytics Forum promotes and supports advancement of analytics, predictive analytics, and data science within the professional community of Omaha. This group is a forum to share experiences and expertise for those struggling to get value out of data.
 
-## [Omaha Python Users Group](www.omahapython.org)
+## [Omaha Python Users Group](http://www.omahapython.org)
 
 The Omaha Python Users Group is comprised of individuals who use the Python programming languages for fun and/or profit.  We encourage anyone using, learning or just interested in the language to join us.
 
