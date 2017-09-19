@@ -44,7 +44,7 @@ After the initial set up you can open the R Project in Rstudio and use the
 IDE to handle most of the work you will need to do in git.
 
 
-<img src = "../img/rstudio_git.png" width = "75%" height = "75%">
+<img src = "./img/rstudio_git.png" width = "75%" height = "75%">
 
 
 ***
@@ -73,7 +73,7 @@ blogdown::new_post('Submitting a Post with Blogdown')
 or you can use the Rstudio addin that is provided:
 
 
-![](../img/new_post_addin.PNG)
+![](./img/new_post_addin.PNG)
 
 
 Blogdown supports both R Markdown or Markdown. You now have a templated
@@ -99,7 +99,7 @@ repository for the website. To submit your post for publication, create a pull
 request to merge your branch with the master.
 
 
-<img src = "../img/pull_request.png" width = "75%" height = "75%">
+<img src = "./img/pull_request.png" width = "75%" height = "75%">
 
 
 You will need to resolve any conflicts when merging the branches. Be wary of 
