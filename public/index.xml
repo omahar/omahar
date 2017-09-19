@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Omaha R Users</title>
+    <link>https://username.github.io/</link>
+    <description>Recent content on Omaha R Users</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 11 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://username.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Submitting a Post with Blogdown</title>
+      <link>https://username.github.io/post/submitting-a-post-with-blogdown/</link>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://username.github.io/post/submitting-a-post-with-blogdown/</guid>
+      <description>Set upYou will first need to set up an account on github and install git.
+Next, make a copy of the repository into your desired workspace. I like to keep all of my version controlled projects under one directory. Open up a command terminal of your choosing and use the following:
+cd #[working directory]git clone https://github.com/omahar/omahar.gitgit branch #[new branch]git checkout #[new branch]git push --set-upstream origin developmentAfter the initial set up you can open the R Project in Rstudio and use the IDE to handle most of the work you will need to do in git.</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>https://username.github.io/page/resources/</link>
+      <pubDate>Fri, 08 Sep 2017 14:10:57 -0500</pubDate>
+      
+      <guid>https://username.github.io/page/resources/</guid>
+      <description>Omaha Analytics Forum The Omaha Analytics Forum promotes and supports advancement of analytics, predictive analytics, and data science within the professional community of Omaha. This group is a forum to share experiences and expertise for those struggling to get value out of data.
+Omaha Python Users Group The Omaha Python Users Group is comprised of individuals who use the Python programming languages for fun and/or profit. We encourage anyone using, learning or just interested in the language to join us.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://username.github.io/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://username.github.io/page/about/</guid>
+      <description>The mission of the Omaha R User Group is to promote the use of the R programming language and support the development of a supportive and welcoming community of R programmers by sharing our experiences and expertise with other users and those new to R.
+Any questions, comments, concerns you can contact us at &amp;ldquo;&amp;rdquo;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -9,6 +9,8 @@ categories:
 tags:
   - blogdown
   - R Markdown
+  - markdown
+  - netlify
   - github
   - git
   - RStudio
