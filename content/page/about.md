@@ -1,15 +1,12 @@
 ---
-title: About
+title: "About"
 comments: false
+draft: true
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+The mission of the Omaha R User Group is to promote the use of the R programming 
+language and support the development of a supportive and welcoming community of 
+R programmers by sharing our experiences and expertise with other users and 
+those new to R.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Any questions, comments, concerns you can contact us at ""
