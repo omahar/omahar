@@ -3,82 +3,102 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/post/submitting-a-post-with-blogdown/</loc>
+    <loc>/post/submitting-a-post-with-blogdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/</loc>
+    <loc>/page/projects/</loc>
+    <lastmod>2017-09-08T14:50:10-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/page/resources/</loc>
+    <lastmod>2017-09-08T14:10:57-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/tags/blogdown/</loc>
-    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/page/about/</loc>
   </url>
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://robber-sheep-16431.netlify.com/tags/git/</loc>
-    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://robber-sheep-16431.netlify.com/tags/github/</loc>
+    <loc>/tags/blogdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/tags/markdown/</loc>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/git/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/tags/netlify/</loc>
+    <loc>/tags/github/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/post/</loc>
+    <loc>/tags/markdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/categories/r/</loc>
+    <loc>/tags/netlify/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/tags/r-markdown/</loc>
+    <loc>/page/</loc>
+    <lastmod>2017-09-08T14:50:10-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/tags/rstudio/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/tags/</loc>
+    <loc>/tags/rmarkdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://robber-sheep-16431.netlify.com/categories/tutorial/</loc>
+    <loc>/tags/rstudio/</loc>
+    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/tutorial/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

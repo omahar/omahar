@@ -2,74 +2,74 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Omaha R Users</title>
-    <link>https://robber-sheep-16431.netlify.com/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 11 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://robber-sheep-16431.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Blogdown</title>
-      <link>https://robber-sheep-16431.netlify.com/tags/blogdown/</link>
+      <link>/tags/blogdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://robber-sheep-16431.netlify.com/tags/blogdown/</guid>
+      <guid>/tags/blogdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://robber-sheep-16431.netlify.com/tags/git/</link>
+      <link>/tags/git/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://robber-sheep-16431.netlify.com/tags/git/</guid>
+      <guid>/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>https://robber-sheep-16431.netlify.com/tags/github/</link>
+      <link>/tags/github/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://robber-sheep-16431.netlify.com/tags/github/</guid>
+      <guid>/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>https://robber-sheep-16431.netlify.com/tags/markdown/</link>
+      <link>/tags/markdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://robber-sheep-16431.netlify.com/tags/markdown/</guid>
+      <guid>/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Netlify</title>
-      <link>https://robber-sheep-16431.netlify.com/tags/netlify/</link>
+      <link>/tags/netlify/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://robber-sheep-16431.netlify.com/tags/netlify/</guid>
+      <guid>/tags/netlify/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R Markdown</title>
-      <link>https://robber-sheep-16431.netlify.com/tags/r-markdown/</link>
+      <title>Rmarkdown</title>
+      <link>/tags/rmarkdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://robber-sheep-16431.netlify.com/tags/r-markdown/</guid>
+      <guid>/tags/rmarkdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rstudio</title>
-      <link>https://robber-sheep-16431.netlify.com/tags/rstudio/</link>
+      <link>/tags/rstudio/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://robber-sheep-16431.netlify.com/tags/rstudio/</guid>
+      <guid>/tags/rstudio/</guid>
       <description></description>
     </item>
     
