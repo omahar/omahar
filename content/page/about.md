@@ -1,6 +1,7 @@
 ---
 title: "About"
 comments: false
+draft: true
 ---
 
 The mission of the Omaha R User Group is to promote the use of the R programming 
