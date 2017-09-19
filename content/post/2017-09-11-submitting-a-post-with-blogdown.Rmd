@@ -8,7 +8,7 @@ categories:
   - tutorial
 tags:
   - blogdown
-  - R Markdown
+  - rmarkdown
   - markdown
   - netlify
   - github
