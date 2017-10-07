@@ -5,27 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Submitting a Post with Blogdown</title>
-  <meta property="og:title" content="Submitting a Post with Blogdown" />
-  <meta name="twitter:title" content="Submitting a Post with Blogdown" />
-  <meta name="description" content="Set upYou will first need to set up an account on github and install git.
-Next, make a copy of the repository into your desired workspace. I like to keep all of my version controlled projects under one directory. Open up a command terminal of your choosing and use the following:
-cd #[working directory]git clone https://github.com/omahar/omahar.gitgit branch #[new branch]git checkout #[new branch]git push --set-upstream origin developmentAfter the initial set up you can open the R Project in Rstudio and use the IDE to handle most of the work you will need to do in git.">
-  <meta property="og:description" content="Set upYou will first need to set up an account on github and install git.
-Next, make a copy of the repository into your desired workspace. I like to keep all of my version controlled projects under one directory. Open up a command terminal of your choosing and use the following:
-cd #[working directory]git clone https://github.com/omahar/omahar.gitgit branch #[new branch]git checkout #[new branch]git push --set-upstream origin developmentAfter the initial set up you can open the R Project in Rstudio and use the IDE to handle most of the work you will need to do in git.">
-  <meta name="twitter:description" content="Set upYou will first need to set up an account on github and install git.
-Next, make a copy of the repository into your desired workspace. I like to keep all of my version controlled projects under …">
+  <title>Meeting</title>
+  <meta property="og:title" content="Meeting" />
+  <meta name="twitter:title" content="Meeting" />
   <meta name="author" content="Omaha R Users"/>
   <meta property="og:image" content="/img/orug_logo.png" />
   <meta name="twitter:image" content="/img/orug_logo.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="/post/submitting-a-post-with-blogdown/" />
+  <meta property="og:url" content="/tags/meeting/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Omaha R Users" />
 
   <meta name="generator" content="Hugo 0.26" />
-  <link rel="canonical" href="/post/submitting-a-post-with-blogdown/" />
+  <link rel="canonical" href="/tags/meeting/" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Omaha R Users">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -158,33 +150,14 @@ Next, make a copy of the repository into your desired workspace. I like to keep 
 
 
     
-  
-  
-  
-
-
-
-
-  
-
   <header class="header-section ">
-    
     <div class="intro-header no-img">
-      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-heading">
-              <h1>Submitting a Post with Blogdown</h1>
-                
-                
-                  <span class="post-meta">
-  Posted on September 11, 2017
-  
-</span>
-
-
-                
+            <div class="page-heading">
+              <h1>#Meeting</h1>
+              <hr class="small">
             </div>
           </div>
         </div>
@@ -192,77 +165,47 @@ Next, make a copy of the repository into your desired workspace. I like to keep 
     </div>
   </header>
 
-
     
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
-        <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-<script src="/rmarkdown-libs/viz/viz.js"></script>
-<link href="/rmarkdown-libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/grViz-binding/grViz.js"></script>
-
-
-<div id="set-up" class="section level2">
-<h2>Set up</h2>
-<p>You will first need to set up an account on <a href="https://www.github.com"><strong>github</strong></a> and install <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"><strong>git</strong></a>.</p>
-<p>Next, make a copy of the repository into your desired workspace. I like to keep all of my version controlled projects under one directory. Open up a command terminal of your choosing and use the following:</p>
-<pre class="bash"><code>cd #[working directory]
-git clone https://github.com/omahar/omahar.git
-git branch #[new branch]
-git checkout #[new branch]
-git push --set-upstream origin development</code></pre>
-<p>After the initial set up you can open the R Project in Rstudio and use the IDE to handle most of the work you will need to do in git.</p>
-<p><img src = "./img/rstudio_git.png" width = "75%" height = "75%"></p>
-<hr />
-<p>The <a href="https://bookdown.org/yihui/blogdown/"><code>blogdown</code></a> package is an R interface to creating static web pages with Hugo. I will be using the <a href="https://www.rstudio.com/"><strong>Rstudio</strong></a> IDE and this package to do the majority of the heavy lifting.</p>
-<pre class="r"><code>devtools::install_github(&#39;rstudio/blogdown&#39;)</code></pre>
-</div>
-<div id="creating-a-new-post" class="section level2">
-<h2>Creating a New Post</h2>
-<p>You can use the command line to create a new post:</p>
-<pre class="r"><code>blogdown::new_post(&#39;Submitting a Post with Blogdown&#39;)</code></pre>
-<p>or you can use the Rstudio addin that is provided:</p>
-<div class="figure">
-<img src="./img/new_post_addin.PNG" />
-
-</div>
-<p>Blogdown supports both R Markdown or Markdown. You now have a templated document set up to edit. Write your post and once you are satisfied that you are ready to publish, re-build the site:</p>
-<pre class="r"><code>blogdown::build_site()</code></pre>
-<p>Check for errors and visually inspect:</p>
-<pre class="r"><code>blogdown::serve_site()</code></pre>
-</div>
-<div id="submitting-a-post-to-the-website-repository" class="section level2">
-<h2>Submitting a Post to the Website Repository</h2>
-<p>When you are ready to publish your post, you will need to head to the github repository for the website. To submit your post for publication, create a pull request to merge your branch with the master.</p>
-<p><img src = "./img/pull_request.png" width = "75%" height = "75%"></p>
-<p>You will need to resolve any conflicts when merging the branches. Be wary of overwriting other files already in the master branch. Once the pull request is sent, it will need to pass a review before being published. When the changes are accepted and merged into the master, Netlify will rebuild the new part of the website and your post will be published to the website.</p>
-</div>
-<div id="workflow" class="section level2">
-<h2>Workflow</h2>
-<div id="htmlwidget-1" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"\n\ndigraph workflow {\n\n  graph[compound = true, center = true, rankdir = LR]\n\n  subgraph cluster0 {\n  graph [label = \"Local Repository\", fontsize = 50, labelloc = true]\n  \n  node [fontsize = 30]\n  {rank = same; \"new_post\"; \"git commit\"; \"git push\"; \"git pull\"}\n  \n\n  \"git pull\" -> \"new_post\" -> \"git commit\" -> \"git push\"\n  \"git push\" -> \"git commit\"\n  \n  }\n\n  subgraph cluster1 {\n  graph [label = \"Remote Repository\", fontsize = 50, labelloc = true]\n\n  node [fontsize = 30]\n  {rank = same; \"pull request\"; \"review\"; \"merge\"}\n  \n  \"git push\" -> \"pull request\" -> \"review\" -> \"git commit\"\n  \"review\" -> \"merge\"\n  }\n\n  subgraph cluster2 {\n  graph [label = \"Web\", fontsize = 50, labelloc = true]\n\n  node [fontsize = 30]\n  {rank = same; \"merge\", \"netlify\"}\n\n  \"merge\" -> \"netlify\" -> \"publish\"\n  }\n  \n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-</div>
-
-      </article>
-
-      <ul class="pager blog-pager">
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
-        
-          <li class="next">
-            <a href="/post/meeting0001/" data-toggle="tooltip" data-placement="top" title="Omaha R User Group Meeting">Next Post &rarr;</a>
-          </li>
-        
-      </ul>
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/post/meeting0001/">
+                <h2 class="post-title">Omaha R User Group Meeting</h2>
 
-      
-        
-      
+                
+              </a>
 
+              <p class="post-meta">
+                Posted on October 6, 2017
+              </p>
+              <div class="post-entry">
+                
+                  Omaha R User Group Meeting October 24th, 2017 3:00-4:30 pm Do Space 7205 Dodge St Omaha, NE 68114 Please join us for the first R Omaha User Group Meeting on Tuesday October 24th. We will have an introduction for the group, open discussion on the current state of R as well as two featured presentations. Branden Collingsworth will introduce the purrr package from the tidyverse and Garth Highland will showcase the use of functional boxplots.
+                  <a href="/post/meeting0001/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="/tags/meeting/">meeting</a>&nbsp;
+                  
+                    #<a href="/tags/announcement/">announcement</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+        </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
     <footer>
   <div class="container">
