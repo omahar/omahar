@@ -1,0 +1,14 @@
+---
+title: Example Post
+author: Thomas Roh
+date: '2017-10-24'
+slug: example-post
+categories:
+  - R
+tags: []
+---
+
+```{r}
+2+2
+```
+
