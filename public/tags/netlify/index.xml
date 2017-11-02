@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Netlify on Omaha R Users</title>
-    <link>/tags/netlify/</link>
+    <link>https://omahar.netlify.com/tags/netlify/</link>
     <description>Recent content in Netlify on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 11 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/netlify/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://omahar.netlify.com/tags/netlify/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Submitting a Post with Blogdown</title>
-      <link>/post/submitting-a-post-with-blogdown/</link>
+      <link>https://omahar.netlify.com/post/submitting-a-post-with-blogdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/submitting-a-post-with-blogdown/</guid>
+      <guid>https://omahar.netlify.com/post/submitting-a-post-with-blogdown/</guid>
       <description>Set upYou will first need to set up an account on github and install git.
 Next, make a copy of the repository into your desired workspace. I like to keep all of my version controlled projects under one directory. Open up a command terminal of your choosing and use the following:
 cd #[working directory]git clone https://github.com/omahar/omahar.gitgit branch #[new branch]git checkout #[new branch]git push --set-upstream origin developmentAfter the initial set up you can open the R Project in Rstudio and use the IDE to handle most of the work you will need to do in git.</description>

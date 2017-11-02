@@ -1,0 +1,58 @@
+---
+title: fbplot
+author: Garth Highland
+date: '2017-11-02'
+slug: fbplot
+categories:
+  - tutorial
+  - R
+tags:
+  - fda
+  - boxplot
+---
+
+
+
+<div id="visualizing-data-using-the-functional-boxplot" class="section level3">
+<h3>Visualizing Data Using the Functional Boxplot</h3>
+<pre class="r"><code>library(fda)
+data(growth)
+girls=growth$hgtf
+age=growth$age</code></pre>
+<p>The Berkley growth data found in the fda package is an excellent example of functional data. Here we consider each growth curve to be one observation. With data of this type there are a couple of plotting avenues we might take: over plotting or sequential boxplots.</p>
+<p><img src="/post/2017-11-02-fbplot_files/figure-html/boxplots-1.png" width="960" /></p>
+<p>These methods aren’t inherently “incorrect”, but limitations to their interpretability exist especially when encountered with larger data sets. The functional boxplot approach helps visualize these larger data sets while also providing an interpretation familiar to us as box plots are. One can easily see in the output below the shape of the median observation, inner quartile range, and the maximal non-outlying envelope.</p>
+<p>The fbplot command is straightforward receiving a matrix of observed values, a vector of corresponding x values, and standard base graphics arguments. The fbplot is based on a calculation of band depth for each observation, which is a measure of central tendency. Output consists of the band depth, identification of the median observation, and any observations that are considered to be outliers.</p>
+<pre class="r"><code>fbplot(girls,x=age,
+       xlim=c(0,20),ylim=c(50,200),
+       xlab=&quot;Age (Years)&quot;,ylab=&quot;Height (cm)&quot;,
+       main=&quot;Functional Boxplot: Height of Girls&quot;)</code></pre>
+<p><img src="/post/2017-11-02-fbplot_files/figure-html/fboxplots-1.png" width="480" /></p>
+<pre><code>## $depth
+##     girl01     girl02     girl03     girl04     girl05     girl06 
+## 0.40919952 0.49664683 0.30156556 0.43267735 0.47162485 0.42960596 
+##     girl07     girl08     girl09     girl10     girl11     girl12 
+## 0.23571944 0.03703704 0.48985032 0.21643448 0.43925407 0.40958274 
+##     girl13     girl14     girl15     girl16     girl17     girl18 
+## 0.08502401 0.44806812 0.34402967 0.18687022 0.42103988 0.18413133 
+##     girl19     girl20     girl21     girl22     girl23     girl24 
+## 0.49167061 0.42719393 0.34362390 0.48044453 0.42615698 0.28134510 
+##     girl25     girl26     girl27     girl28     girl29     girl30 
+## 0.30034264 0.20578323 0.48245644 0.48132369 0.08928451 0.47829738 
+##     girl31     girl32     girl33     girl34     girl35     girl36 
+## 0.45609883 0.39549943 0.38087509 0.48449652 0.45554090 0.44654652 
+##     girl37     girl38     girl39     girl40     girl41     girl42 
+## 0.29858434 0.18224341 0.38718131 0.34355628 0.44220712 0.11380492 
+##     girl43     girl44     girl45     girl46     girl47     girl48 
+## 0.22408196 0.45660603 0.47345641 0.39476680 0.36635784 0.17495097 
+##     girl49     girl50     girl51     girl52     girl53     girl54 
+## 0.37891391 0.48951218 0.37859832 0.47450463 0.27684791 0.33681049 
+## 
+## $outpoint
+## [1] 8
+## 
+## $medcurve
+## girl02 
+##      2</code></pre>
+<p>Additional information can be found in the <a href="https://stsda.kaust.edu.sa/Documents/2011.SG.JCGS.pdf">publication</a> authored by Ying Sun and Marc Genton or in the fda package <a href="https://cran.r-project.org/web/packages/fda/fda.pdf">R documentation</a>.</p>
+</div>

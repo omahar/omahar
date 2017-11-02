@@ -1,0 +1,75 @@
+---
+title: fbplot
+author: Garth Highland
+date: '2017-11-02'
+slug: fbplot
+categories:
+  - tutorial
+  - R
+tags:
+  - fda
+  - boxplot
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Visualizing Data Using the Functional Boxplot
+
+
+```{r fda, echo=TRUE,eval=TRUE,message=FALSE,warning=FALSE}
+library(fda)
+data(growth)
+girls=growth$hgtf
+age=growth$age
+
+```
+
+The Berkley growth data found in the fda package is an excellent example of functional data.  Here we consider each growth curve to be one observation.  With data of this type there are a couple of plotting avenues we might take: over plotting or sequential boxplots.  
+
+```{r boxplots, echo=FALSE,fig.width=10}
+
+par(mfrow=c(1,2),oma=c(0,0,1,0))
+
+
+plot(age,girls[,1],type="l",lwd=2,xlab="Age (Years)",ylab="Height (cm)",
+     xlim=c(0,20),ylim=c(50,200))
+for(i in 2:nrow(girls)){ 
+  lines(age,girls[,i],type="l",lwd=2)}
+
+
+boxplot(girls[1,],at=age[1],xlim=c(0,20),ylim=c(50,200),col="grey",ylab="Height (cm)",xlab="Age (Years)")
+axis(1,at=c(0,5,10,15,20))
+for(i in 2:length(age)){
+  x=as.numeric(rownames(girls)[i])
+  boxplot(girls[i,],at=x,add=T,col="grey")}
+
+title("Berkley Growth Study Data: Height of Girls",outer=TRUE)
+
+```
+
+
+These methods aren't inherently "incorrect", but limitations to their interpretability exist especially when encountered with larger data sets.   The functional boxplot approach helps visualize these larger data sets while also providing an interpretation familiar to us as box plots are.  One can easily see in the output below the shape of the median observation, inner quartile range, and the maximal non-outlying envelope.  
+
+
+
+The fbplot command is straightforward receiving a matrix of observed values, a vector of corresponding x values, and standard base graphics arguments.  The fbplot is based on a calculation of band depth for each observation, which is a measure of central tendency.  Output consists of the band depth, identification of the median observation, and any observations that are considered to be outliers.  
+
+
+
+```{r fboxplots, echo=TRUE,fig.width=5}
+
+
+
+fbplot(girls,x=age,
+       xlim=c(0,20),ylim=c(50,200),
+       xlab="Age (Years)",ylab="Height (cm)",
+       main="Functional Boxplot: Height of Girls")
+
+
+
+```
+
+
+Additional information can be found in the [publication](https://stsda.kaust.edu.sa/Documents/2011.SG.JCGS.pdf) authored by Ying Sun and Marc Genton or in the fda package [R documentation](https://cran.r-project.org/web/packages/fda/fda.pdf).

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>fbplot</title>
+  <meta property="og:title" content="fbplot" />
+  <meta name="twitter:title" content="fbplot" />
+  <meta name="description" content="Visualizing Data Using the Functional Boxplotlibrary(fda)data(growth)girls=growth$hgtfage=growth$ageThe Berkley growth data found in the fda package is an excellent example of functional data. Here we consider each growth curve to be one observation. With data of this type there are a couple of plotting avenues we might take: over plotting or sequential boxplots.
+These methods aren’t inherently “incorrect”, but limitations to their interpretability exist especially when encountered with larger data sets.">
+  <meta property="og:description" content="Visualizing Data Using the Functional Boxplotlibrary(fda)data(growth)girls=growth$hgtfage=growth$ageThe Berkley growth data found in the fda package is an excellent example of functional data. Here we consider each growth curve to be one observation. With data of this type there are a couple of plotting avenues we might take: over plotting or sequential boxplots.
+These methods aren’t inherently “incorrect”, but limitations to their interpretability exist especially when encountered with larger data sets.">
+  <meta name="twitter:description" content="Visualizing Data Using the Functional Boxplotlibrary(fda)data(growth)girls=growth$hgtfage=growth$ageThe Berkley growth data found in the fda package is an excellent example of functional data. …">
+  <meta name="author" content="Omaha R Users"/>
+  <meta property="og:image" content="https://omahar.netlify.com/img/orug_logo.png" />
+  <meta name="twitter:image" content="https://omahar.netlify.com/img/orug_logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://omahar.netlify.com/post/fbplot/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Omaha R Users" />
+
+  <meta name="generator" content="Hugo 0.26" />
+  <link rel="canonical" href="https://omahar.netlify.com/post/fbplot/" />
+  <link rel="alternate" href="https://omahar.netlify.com/index.xml" type="application/rss+xml" title="Omaha R Users">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://omahar.netlify.com/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://omahar.netlify.com/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://omahar.netlify.com/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-107704129-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://omahar.netlify.com/">Omaha R Users</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Home" href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/page/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Resources" href="/page/resources/">Resources</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Omaha R Users" href="https://omahar.netlify.com/">
+            <img class="avatar-img" src="https://omahar.netlify.com/img/orug_logo.png" alt="Omaha R Users" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>fbplot</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on November 2, 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <div id="visualizing-data-using-the-functional-boxplot" class="section level3">
+<h3>Visualizing Data Using the Functional Boxplot</h3>
+<pre class="r"><code>library(fda)
+data(growth)
+girls=growth$hgtf
+age=growth$age</code></pre>
+<p>The Berkley growth data found in the fda package is an excellent example of functional data. Here we consider each growth curve to be one observation. With data of this type there are a couple of plotting avenues we might take: over plotting or sequential boxplots.</p>
+<p><img src="/post/2017-11-02-fbplot_files/figure-html/boxplots-1.png" width="960" /></p>
+<p>These methods aren’t inherently “incorrect”, but limitations to their interpretability exist especially when encountered with larger data sets. The functional boxplot approach helps visualize these larger data sets while also providing an interpretation familiar to us as box plots are. One can easily see in the output below the shape of the median observation, inner quartile range, and the maximal non-outlying envelope.</p>
+<p>The fbplot command is straightforward receiving a matrix of observed values, a vector of corresponding x values, and standard base graphics arguments. The fbplot is based on a calculation of band depth for each observation, which is a measure of central tendency. Output consists of the band depth, identification of the median observation, and any observations that are considered to be outliers.</p>
+<pre class="r"><code>fbplot(girls,x=age,
+       xlim=c(0,20),ylim=c(50,200),
+       xlab=&quot;Age (Years)&quot;,ylab=&quot;Height (cm)&quot;,
+       main=&quot;Functional Boxplot: Height of Girls&quot;)</code></pre>
+<p><img src="/post/2017-11-02-fbplot_files/figure-html/fboxplots-1.png" width="480" /></p>
+<pre><code>## $depth
+##     girl01     girl02     girl03     girl04     girl05     girl06 
+## 0.40919952 0.49664683 0.30156556 0.43267735 0.47162485 0.42960596 
+##     girl07     girl08     girl09     girl10     girl11     girl12 
+## 0.23571944 0.03703704 0.48985032 0.21643448 0.43925407 0.40958274 
+##     girl13     girl14     girl15     girl16     girl17     girl18 
+## 0.08502401 0.44806812 0.34402967 0.18687022 0.42103988 0.18413133 
+##     girl19     girl20     girl21     girl22     girl23     girl24 
+## 0.49167061 0.42719393 0.34362390 0.48044453 0.42615698 0.28134510 
+##     girl25     girl26     girl27     girl28     girl29     girl30 
+## 0.30034264 0.20578323 0.48245644 0.48132369 0.08928451 0.47829738 
+##     girl31     girl32     girl33     girl34     girl35     girl36 
+## 0.45609883 0.39549943 0.38087509 0.48449652 0.45554090 0.44654652 
+##     girl37     girl38     girl39     girl40     girl41     girl42 
+## 0.29858434 0.18224341 0.38718131 0.34355628 0.44220712 0.11380492 
+##     girl43     girl44     girl45     girl46     girl47     girl48 
+## 0.22408196 0.45660603 0.47345641 0.39476680 0.36635784 0.17495097 
+##     girl49     girl50     girl51     girl52     girl53     girl54 
+## 0.37891391 0.48951218 0.37859832 0.47450463 0.27684791 0.33681049 
+## 
+## $outpoint
+## [1] 8
+## 
+## $medcurve
+## girl02 
+##      2</code></pre>
+<p>Additional information can be found in the <a href="https://stsda.kaust.edu.sa/Documents/2011.SG.JCGS.pdf">publication</a> authored by Ying Sun and Marc Genton or in the fda package <a href="https://cran.r-project.org/web/packages/fda/fda.pdf">R documentation</a>.</p>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://omahar.netlify.com/post/meeting0001/" data-toggle="tooltip" data-placement="top" title="Omaha R User Group Meeting">&larr; Previous Post</a>
+          </li>
+        
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/omahar" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://omahar.netlify.com/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Omaha R Users
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://omahar.netlify.com/">Omaha R Users</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.26</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://omahar.netlify.com/js/main.js"></script>
+<script src="https://omahar.netlify.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://omahar.netlify.com/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+
