@@ -7,6 +7,7 @@ categories:
   - R
   - tutorial
 tags:
+  - R
   - blogdown
   - rmarkdown
   - markdown
