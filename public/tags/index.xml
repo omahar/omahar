@@ -2,92 +2,110 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Omaha R Users</title>
-    <link>/tags/</link>
+    <link>https://omahar.netlify.com/tags/</link>
     <description>Recent content in Tags on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 06 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://omahar.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Announcement</title>
-      <link>/tags/announcement/</link>
+      <link>https://omahar.netlify.com/tags/announcement/</link>
       <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/announcement/</guid>
+      <guid>https://omahar.netlify.com/tags/announcement/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blogdown</title>
-      <link>/tags/blogdown/</link>
+      <link>https://omahar.netlify.com/tags/blogdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/blogdown/</guid>
+      <guid>https://omahar.netlify.com/tags/blogdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Boxplot</title>
+      <link>https://omahar.netlify.com/tags/boxplot/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://omahar.netlify.com/tags/boxplot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fda</title>
+      <link>https://omahar.netlify.com/tags/fda/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://omahar.netlify.com/tags/fda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>/tags/git/</link>
+      <link>https://omahar.netlify.com/tags/git/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/git/</guid>
+      <guid>https://omahar.netlify.com/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>/tags/github/</link>
+      <link>https://omahar.netlify.com/tags/github/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/github/</guid>
+      <guid>https://omahar.netlify.com/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>/tags/markdown/</link>
+      <link>https://omahar.netlify.com/tags/markdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/markdown/</guid>
+      <guid>https://omahar.netlify.com/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Meeting</title>
-      <link>/tags/meeting/</link>
+      <link>https://omahar.netlify.com/tags/meeting/</link>
       <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/meeting/</guid>
+      <guid>https://omahar.netlify.com/tags/meeting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Netlify</title>
-      <link>/tags/netlify/</link>
+      <link>https://omahar.netlify.com/tags/netlify/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/netlify/</guid>
+      <guid>https://omahar.netlify.com/tags/netlify/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rmarkdown</title>
-      <link>/tags/rmarkdown/</link>
+      <link>https://omahar.netlify.com/tags/rmarkdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/rmarkdown/</guid>
+      <guid>https://omahar.netlify.com/tags/rmarkdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rstudio</title>
-      <link>/tags/rstudio/</link>
+      <link>https://omahar.netlify.com/tags/rstudio/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/rstudio/</guid>
+      <guid>https://omahar.netlify.com/tags/rstudio/</guid>
       <description></description>
     </item>
     
