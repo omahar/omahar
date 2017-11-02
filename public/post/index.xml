@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Omaha R Users</title>
-    <link>https://omahar.netlify.com/post/</link>
+    <link>https://omahar.org/post/</link>
     <description>Recent content in Posts on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 02 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://omahar.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://omahar.org/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>fbplot</title>
-      <link>https://omahar.netlify.com/post/fbplot/</link>
+      <link>https://omahar.org/post/fbplot/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/post/fbplot/</guid>
+      <guid>https://omahar.org/post/fbplot/</guid>
       <description>Visualizing Data Using the Functional Boxplotlibrary(fda)data(growth)girls=growth$hgtfage=growth$ageThe Berkley growth data found in the fda package is an excellent example of functional data. Here we consider each growth curve to be one observation. With data of this type there are a couple of plotting avenues we might take: over plotting or sequential boxplots.
 These methods aren’t inherently “incorrect”, but limitations to their interpretability exist especially when encountered with larger data sets.</description>
     </item>
     
     <item>
       <title>Omaha R User Group Meeting</title>
-      <link>https://omahar.netlify.com/post/meeting0001/</link>
+      <link>https://omahar.org/post/meeting0001/</link>
       <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/post/meeting0001/</guid>
+      <guid>https://omahar.org/post/meeting0001/</guid>
       <description>Omaha R User Group Meeting October 24th, 2017 3:00-4:30 pm Do Space 7205 Dodge St Omaha, NE 68114 Please join us for the first R Omaha User Group Meeting on Tuesday October 24th. We will have an introduction for the group, open discussion on the current state of R as well as two featured presentations. Branden Collingsworth will introduce the purrr package from the tidyverse and Garth Highland will showcase the use of functional boxplots.</description>
     </item>
     
     <item>
       <title>Submitting a Post with Blogdown</title>
-      <link>https://omahar.netlify.com/post/submitting-a-post-with-blogdown/</link>
+      <link>https://omahar.org/post/submitting-a-post-with-blogdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/post/submitting-a-post-with-blogdown/</guid>
+      <guid>https://omahar.org/post/submitting-a-post-with-blogdown/</guid>
       <description>Set upYou will first need to set up an account on github and install git.
 Next, make a copy of the repository into your desired workspace. I like to keep all of my version controlled projects under one directory. Open up a command terminal of your choosing and use the following:
 cd #[working directory]git clone https://github.com/omahar/omahar.gitgit branch #[new branch]git checkout #[new branch]git push --set-upstream origin developmentAfter the initial set up you can open the R Project in Rstudio and use the IDE to handle most of the work you will need to do in git.</description>

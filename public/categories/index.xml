@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Omaha R Users</title>
-    <link>https://omahar.netlify.com/categories/</link>
+    <link>https://omahar.org/categories/</link>
     <description>Recent content in Categories on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://omahar.netlify.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://omahar.org/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>R</title>
-      <link>https://omahar.netlify.com/categories/r/</link>
+      <link>https://omahar.org/categories/r/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/categories/r/</guid>
+      <guid>https://omahar.org/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorial</title>
-      <link>https://omahar.netlify.com/categories/tutorial/</link>
+      <link>https://omahar.org/categories/tutorial/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/categories/tutorial/</guid>
+      <guid>https://omahar.org/categories/tutorial/</guid>
       <description></description>
     </item>
     

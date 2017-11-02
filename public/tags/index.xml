@@ -2,110 +2,110 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Omaha R Users</title>
-    <link>https://omahar.netlify.com/tags/</link>
+    <link>https://omahar.org/tags/</link>
     <description>Recent content in Tags on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 06 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://omahar.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://omahar.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Announcement</title>
-      <link>https://omahar.netlify.com/tags/announcement/</link>
+      <link>https://omahar.org/tags/announcement/</link>
       <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/tags/announcement/</guid>
+      <guid>https://omahar.org/tags/announcement/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blogdown</title>
-      <link>https://omahar.netlify.com/tags/blogdown/</link>
+      <link>https://omahar.org/tags/blogdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/tags/blogdown/</guid>
+      <guid>https://omahar.org/tags/blogdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Boxplot</title>
-      <link>https://omahar.netlify.com/tags/boxplot/</link>
+      <link>https://omahar.org/tags/boxplot/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/tags/boxplot/</guid>
+      <guid>https://omahar.org/tags/boxplot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fda</title>
-      <link>https://omahar.netlify.com/tags/fda/</link>
+      <link>https://omahar.org/tags/fda/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/tags/fda/</guid>
+      <guid>https://omahar.org/tags/fda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://omahar.netlify.com/tags/git/</link>
+      <link>https://omahar.org/tags/git/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/tags/git/</guid>
+      <guid>https://omahar.org/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>https://omahar.netlify.com/tags/github/</link>
+      <link>https://omahar.org/tags/github/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/tags/github/</guid>
+      <guid>https://omahar.org/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>https://omahar.netlify.com/tags/markdown/</link>
+      <link>https://omahar.org/tags/markdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/tags/markdown/</guid>
+      <guid>https://omahar.org/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Meeting</title>
-      <link>https://omahar.netlify.com/tags/meeting/</link>
+      <link>https://omahar.org/tags/meeting/</link>
       <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/tags/meeting/</guid>
+      <guid>https://omahar.org/tags/meeting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Netlify</title>
-      <link>https://omahar.netlify.com/tags/netlify/</link>
+      <link>https://omahar.org/tags/netlify/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/tags/netlify/</guid>
+      <guid>https://omahar.org/tags/netlify/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rmarkdown</title>
-      <link>https://omahar.netlify.com/tags/rmarkdown/</link>
+      <link>https://omahar.org/tags/rmarkdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/tags/rmarkdown/</guid>
+      <guid>https://omahar.org/tags/rmarkdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rstudio</title>
-      <link>https://omahar.netlify.com/tags/rstudio/</link>
+      <link>https://omahar.org/tags/rstudio/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.netlify.com/tags/rstudio/</guid>
+      <guid>https://omahar.org/tags/rstudio/</guid>
       <description></description>
     </item>
     
