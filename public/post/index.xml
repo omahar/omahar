@@ -50,14 +50,5 @@ Next, make a copy of the repository into your desired workspace. I like to keep 
 cd #[working directory]git clone https://github.com/omahar/omahar.gitgit branch #[new branch]git checkout #[new branch]git push --set-upstream origin developmentAfter the initial set up you can open the R Project in Rstudio and use the IDE to handle most of the work you will need to do in git.</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://omahar.org/post/2017-12-28-omaha-r-user-group-meeting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://omahar.org/post/2017-12-28-omaha-r-user-group-meeting/</guid>
-      <description>Omaha R User Group Meetingcode{white-space: pre;}pre:not([class]) {background-color: white;}if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() {hljs.initHighlighting();}, 0);}h1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}.</description>
-    </item>
-    
   </channel>
 </rss>
