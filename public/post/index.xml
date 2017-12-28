@@ -5,10 +5,20 @@
     <link>https://omahar.org/post/</link>
     <description>Recent content in Posts on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 02 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://omahar.org/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Omaha R User Group Meeting</title>
+      <link>https://omahar.org/post/meeting0002/</link>
+      <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://omahar.org/post/meeting0002/</guid>
+      <description> January 18th, 2018 3:00-4:30 pm Do Space 7205 Dodge St Omaha, NE 68114 The January R User Group Meeting will include presentations from Branden Collingsworth on using the Spotify API in R to analyze song characteristics, Thomas Roh will show predictive modeling for College Football Bowl Predictions, and Kelly Pook will present on College Football Graph Theory.
+Powered by Eventbrite   </description>
+    </item>
     
     <item>
       <title>fbplot</title>
