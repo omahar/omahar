@@ -5,10 +5,20 @@
     <link>https://omahar.org/</link>
     <description>Recent content on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 02 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://omahar.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Omaha R User Group Meeting</title>
+      <link>https://omahar.org/post/meeting0002/</link>
+      <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://omahar.org/post/meeting0002/</guid>
+      <description> January 18th, 2018 3:00-4:30 pm Do Space 7205 Dodge St Omaha, NE 68114 The January R User Group Meeting will include presentations from Branden Collingsworth on using the Spotify API in R to analyze song characteristics, Thomas Roh will show predictive modeling for College Football Bowl Predictions, and Kelly Pook will present on College Football Graph Theory.
+Powered by Eventbrite   </description>
+    </item>
     
     <item>
       <title>fbplot</title>
@@ -38,6 +48,15 @@ These methods aren’t inherently “incorrect”, but limitations to their inte
       <description>Set upYou will first need to set up an account on github and install git.
 Next, make a copy of the repository into your desired workspace. I like to keep all of my version controlled projects under one directory. Open up a command terminal of your choosing and use the following:
 cd #[working directory]git clone https://github.com/omahar/omahar.gitgit branch #[new branch]git checkout #[new branch]git push --set-upstream origin developmentAfter the initial set up you can open the R Project in Rstudio and use the IDE to handle most of the work you will need to do in git.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://omahar.org/post/2017-12-28-omaha-r-user-group-meeting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://omahar.org/post/2017-12-28-omaha-r-user-group-meeting/</guid>
+      <description>Omaha R User Group Meetingcode{white-space: pre;}pre:not([class]) {background-color: white;}if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() {hljs.initHighlighting();}, 0);}h1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}.</description>
     </item>
     
   </channel>

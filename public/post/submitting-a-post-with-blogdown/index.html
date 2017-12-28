@@ -248,6 +248,8 @@ git push --set-upstream origin development</code></pre>
 </div>
 <div id="workflow" class="section level2">
 <h2>Workflow</h2>
+<pre><code>## Warning: replacing previous import &#39;scales::viridis_pal&#39; by
+## &#39;viridis::viridis_pal&#39; when loading &#39;DiagrammeR&#39;</code></pre>
 <div id="htmlwidget-1" style="width:672px;height:480px;" class="grViz html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"\n\ndigraph workflow {\n\n  graph[compound = true, center = true, rankdir = LR]\n\n  subgraph cluster0 {\n  graph [label = \"Local Repository\", fontsize = 50, labelloc = true]\n  \n  node [fontsize = 30]\n  {rank = same; \"new_post\"; \"git commit\"; \"git push\"; \"git pull\"}\n  \n\n  \"git pull\" -> \"new_post\" -> \"git commit\" -> \"git push\"\n  \"git push\" -> \"git commit\"\n  \n  }\n\n  subgraph cluster1 {\n  graph [label = \"Remote Repository\", fontsize = 50, labelloc = true]\n\n  node [fontsize = 30]\n  {rank = same; \"pull request\"; \"review\"; \"merge\"}\n  \n  \"git push\" -> \"pull request\" -> \"review\" -> \"git commit\"\n  \"review\" -> \"merge\"\n  }\n\n  subgraph cluster2 {\n  graph [label = \"Web\", fontsize = 50, labelloc = true]\n\n  node [fontsize = 30]\n  {rank = same; \"merge\", \"netlify\"}\n\n  \"merge\" -> \"netlify\" -> \"publish\"\n  }\n  \n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
@@ -255,6 +257,10 @@ git push --set-upstream origin development</code></pre>
       </article>
 
       <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://omahar.org/post/2017-12-28-omaha-r-user-group-meeting/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+          </li>
         
         
           <li class="next">
