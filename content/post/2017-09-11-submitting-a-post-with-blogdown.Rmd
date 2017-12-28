@@ -37,7 +37,7 @@ cd #[working directory]
 git clone https://github.com/omahar/omahar.git
 git branch #[new branch]
 git checkout #[new branch]
-git push --set-upstream origin development
+git push --set-upstream origin #[new branch]
 ```
 
 

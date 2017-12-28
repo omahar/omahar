@@ -2,119 +2,119 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Omaha R Users</title>
-    <link>https://omahar.org/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 28 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://omahar.org/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Announcement</title>
-      <link>https://omahar.org/tags/announcement/</link>
+      <link>/tags/announcement/</link>
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/announcement/</guid>
+      <guid>/tags/announcement/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blogdown</title>
-      <link>https://omahar.org/tags/blogdown/</link>
+      <link>/tags/blogdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/blogdown/</guid>
+      <guid>/tags/blogdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Boxplot</title>
-      <link>https://omahar.org/tags/boxplot/</link>
+      <link>/tags/boxplot/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/boxplot/</guid>
+      <guid>/tags/boxplot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fda</title>
-      <link>https://omahar.org/tags/fda/</link>
+      <link>/tags/fda/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/fda/</guid>
+      <guid>/tags/fda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://omahar.org/tags/git/</link>
+      <link>/tags/git/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/git/</guid>
+      <guid>/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>https://omahar.org/tags/github/</link>
+      <link>/tags/github/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/github/</guid>
+      <guid>/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>https://omahar.org/tags/markdown/</link>
+      <link>/tags/markdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/markdown/</guid>
+      <guid>/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Meeting</title>
-      <link>https://omahar.org/tags/meeting/</link>
+      <link>/tags/meeting/</link>
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/meeting/</guid>
+      <guid>/tags/meeting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Netlify</title>
-      <link>https://omahar.org/tags/netlify/</link>
+      <link>/tags/netlify/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/netlify/</guid>
+      <guid>/tags/netlify/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>https://omahar.org/tags/r/</link>
+      <link>/tags/r/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/r/</guid>
+      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rmarkdown</title>
-      <link>https://omahar.org/tags/rmarkdown/</link>
+      <link>/tags/rmarkdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/rmarkdown/</guid>
+      <guid>/tags/rmarkdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rstudio</title>
-      <link>https://omahar.org/tags/rstudio/</link>
+      <link>/tags/rstudio/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/tags/rstudio/</guid>
+      <guid>/tags/rstudio/</guid>
       <description></description>
     </item>
     
