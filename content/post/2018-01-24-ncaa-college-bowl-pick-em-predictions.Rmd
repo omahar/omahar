@@ -1,0 +1,291 @@
+---
+title: NCAA College Bowl Pick'em Predictions
+author: Thomas Roh
+date: '2018-01-24'
+slug: ncaa-college-bowl-pick-em-predictions
+categories: []
+tags: 
+  -R
+  -gbm
+  -rvest
+  -dplyr
+  -tidyr
+  -stringr
+  -caret
+  -stepAIC
+---
+
+***Please read the [Terms of Use](http://www.cfbstats.com/blog/terms-of-use/) if you are going to use the data**
+
+This is the code from my presentation last week at the Omaha R User Group Meeting. 
+A fun competition every year is to pick the winners for each college football 
+bowl. I wanted to build a data-driven model to help me make this year's picks. 
+This post will walk through the process of obtaining data for predictions, 
+building a couple predictive models, and then compare the results of the 
+models.
+
+### Scraping Data
+
+I'm using the [`rvest`](https://cran.r-project.org/web/packages/rvest/index.html) 
+to scrape some data that has been made available to the public at www.cfbstats.com. 
+I recommend looking up some examples and using [SelectorGadget](http://selectorgadget.com/) extension to look up css or xpath 
+for queries.
+
+First, I want to get a list of all the NCAA FBS teams.
+
+```{r, message=FALSE}
+library(rvest)
+library(stringr)
+library(dplyr)
+library(tidyr)
+library(caret)
+
+cfbStats <- read_html("http://www.cfbstats.com/")
+teams <- cfbStats %>%
+  html_nodes(".sub1 a") %>%
+  html_text()
+teams[1:5]
+```
+
+You can click on a team and see some of the underlying data that is available. 
+There are 130 teams so going through each link and acquiring the data is fairly 
+time expensive. Instead, I'm going to acquire a vector of all of those links.
+
+
+```{r}
+cfbLinks <- cfbStats %>%
+  html_nodes(".sub1 a") %>%
+  html_attr("href") %>%
+  paste0("http://www.cfbstats.com", .)
+cfbLinks[1:5]
+```
+
+All of the data points are contained with html tables so I'm going to loop through 
+and grab the tables for each team.
+
+```{r}
+cfbTables <- lapply(cfbLinks, function(site) {
+  Sys.sleep(1)
+  read_html(site) %>%
+    html_table()
+})
+```
+
+### Data Cleaning
+
+I looked at the statistics provided for each of the tables and I came up with a
+list of the ones that I wanted.
+
+```{r}
+statNames <- c("Points_per_Game","Total_First_Downs","Rushing_Yards_Mean",
+                "Passing_Rating","Passing_Att_Comp_INT_TD","Total_Offense_YDs_per_Play",
+                "Total_Offense_YDs","Punt_Returns","Kickoff_Returns","Punting_Yards",
+                "INT_INTYards_INTTD","Fumbles_Total_Lost","Penalties_Total_Yards",
+                "Third_Down","Fourth_Down","Red_Zone","Field_Goals","PAT_Kicking")
+
+# overall season team stats
+whichStats <- c(1,3,5,7,9,10,11,12,14,16,18,19,20,22,24,26,28,30)
+teamStats <- lapply(cfbTables, function(listElement) {
+  setNames(listElement[[1]][whichStats, ], c("Stat","Home","Opp"))
+}) %>%
+  setNames(teams) %>%
+  bind_rows(.id = "teamName") %>%
+  mutate(Stat = rep(statNames, length(teams)))
+```
+
+The data isn't structured the way I need it yet and numbers are in an awkward format.
+
+```{r}
+home <- teamStats %>%
+  select(-Opp) %>%
+  gather(team, value,-teamName,-Stat) %>%
+  spread(Stat, value) %>%
+  transmute(
+    teamName,
+    team,
+    FG_Perc = str_extract(Field_Goals, "[0-9]+"),
+    Fourth_Down_Perc = str_extract(Fourth_Down, "[0-9]+"),
+    Fumbles_Lost = str_extract(Fumbles_Total_Lost, "[0-9]+$"),
+    Passing_Rating = Passing_Rating,
+    INT = str_extract(INT_INTYards_INTTD, "^[0-9]+"),
+    Avg_Kickoff_Returns = Kickoff_Returns,
+    PAT_Perc = str_extract(PAT_Kicking, "[0-9]+"),
+    Penalty_Yards = str_extract(Penalties_Total_Yards, "[0-9]+$"),
+    Points_per_Game,
+    Avg_Punt_Returns = Punt_Returns,
+    Avg_Punting = Punting_Yards,
+    Red_Zone_Perc = str_extract(Red_Zone, "[0-9]+"),
+    Avg_Rush_Yards = Rushing_Yards_Mean,
+    Third_Down_Perc = str_extract(Third_Down, "[0-9]+"),
+    Total_First_Downs,
+    Total_Offense_YDs_per_Play,
+    Total_Offense_YDs = str_extract(Total_Offense_YDs, "[0-9]+$")
+  ) %>%
+  gather(stat, value, -teamName, -team) %>%
+  mutate(stat = tolower(paste(team, stat, sep = "_"))) %>%
+  select(-team) %>%
+  spread(stat, value)
+home[ ,-1] <- sapply(home[ ,-1], as.numeric)
+
+opp <- setNames(home, sub("home_", "opp_", names(home)))
+```
+
+Now, I have all the team stats that I selected and I can easily join the stats to
+the regular season games. The 2nd html table for each team contains their regular 
+season schedule.
+
+```{r}
+regSeason <- lapply(cfbTables, `[[`, 2) %>%
+  setNames(teams) %>% 
+  bind_rows(.id = "teamName") %>%
+  filter(!is.na(Result),!str_detect(Opponent,"\\+")) %>%
+  mutate(opponent = str_replace(Opponent,"@ ",""), 
+         opponent = str_replace(opponent,"[0-9]+ ",""),
+         win = ifelse(str_detect(Result,"W"),1,0),
+         score = str_extract(Result,"[0-9]+") %>% as.numeric(),
+         opponent_score = as.numeric(str_extract(Result,"[0-9]+$"))) %>%
+  dplyr::select(teamName,opponent,win,score,opponent_score)
+
+regSeason$opponent <- str_replace_all(
+  regSeason$opponent,
+  c(
+  "St\\." = "State",
+  "Ga\\." = "Georgia",
+  "La\\." = "Louisiana",
+  "Caro\\." = "Carolina",
+  "Fla\\." = "Florida",
+  "Ill\\." = "Illinois",
+  "Mich\\." = "Michigan",
+  "Miss\\." = "Mississippi",
+  "Ala\\." = "Alabama",
+  "Ky\\." = "Kentucky",
+  "Tenn\\." = "Tennessee",
+  "Hawaii" = "Hawai'i",
+  "Brigham Young" = "BYU",
+  "Southern California" = "USC",
+  "Southern Methodist" = "SMU",
+  "Middle Tennessee State" = "Middle Tennessee",
+  "Int\\'l" = "International"
+  )
+  )
+```
+
+Last, I'm going to set up a dataset that I can use for predicitive modeling. 
+I'm also going to remove some missing values. These are due to FCS teams, 
+which I do not have data for.
+
+```{r}
+dt <- regSeason %>%
+  left_join(home, by = 'teamName') %>%
+  left_join(opp, by = c('opponent' = 'teamName'))
+dt <- na.omit(dt)
+```
+
+
+### Training the Models
+
+
+
+```{r}
+#splitting the dataset into a training and testing set
+
+set.seed(82)
+i <- createDataPartition(dt$score,
+                        p = .75,
+                        list = FALSE)
+trainSet <- dt[i,-c(1:3,5)]
+testSet <- dt[-i,-c(1:3,5)]
+```
+
+
+```{r}
+# Benchmark test against average score model
+RMSE(testSet$home_points_per_game, testSet$score)
+R2(testSet$home_points_per_game, testSet$score)
+
+vars <- paste0(names(dt)[-c(1:5)],collapse = " + ")
+vars <- sub("+ home_points_per_game ", "", vars)
+formula <- as.formula(paste0("score ~ ",vars))
+formula
+
+# Linear Stepwise Model
+modelLM <- caret::train(formula, trainSet, method = 'lmStepAIC',
+                        trace = FALSE)
+
+# Score Stepwise Test Set
+predLM <- predict(modelLM, testSet)
+RMSE(predLM,testSet$score)
+R2(predLM,testSet$score)
+
+# Gradient Boosted Trees
+modelGBM <- caret::train(formula, trainSet, method = 'gbm',
+                         verbose = FALSE)
+
+# Score GBM Test Set
+predGBM <- predict(modelGBM, testSet)
+RMSE(predGBM,testSet$score)
+R2(predGBM,testSet$score)
+```
+
+### Comparing the Predictions
+
+```{r}
+resultsPage <- 'https://www.sports-reference.com/cfb/years/2017-bowls.html'
+bowlResults <- read_html(resultsPage) %>%
+  html_table() %>%
+  getElement(1) %>%
+  setNames(c('date',
+             'gametime',
+             'bowl',
+             'winner',
+             'wpts',
+             'loser',
+             'lpts',
+             'location',
+             'na'))
+bowlResults <- bowlResults[,-9]
+bowlResults$winner <- str_replace_all(
+  bowlResults$winner,
+  c(
+  "Central Florida" =  "UCF",
+  "Texas Christian" = "TCU",
+  "Middle Tennessee State" = "Middle Tennessee"
+  )
+  )
+
+bowlResults$loser <- str_replace_all(
+  bowlResults$loser,
+  c(
+  "Louisiana State" = "LSU",
+  "Miami \\(FL\\)" = "Miami (Florida)",
+  "Southern California" = "USC",
+  "Alabama-Birmingham" = "UAB",
+  "Southern Methodist" = "SMU"
+  )
+  )
+
+bowlWinners <- bowlResults %>%
+  left_join(home, by = c('winner' = 'teamName')) %>%
+  left_join(opp, by = c('loser' = 'teamName'))
+bowlLosers <- bowlResults %>%
+  left_join(home, by = c('loser' = 'teamName')) %>%
+  left_join(opp, by = c('winner' = 'teamName'))
+```
+
+```{r}
+# Favored
+23/nrow(bowlResults)
+
+# Baseline
+sum(bowlWinners$home_points_per_game >
+  bowlLosers$home_points_per_game)/nrow(bowlResults)
+
+# Stepwise Prediction
+sum(predict(modelLM, bowlWinners) >
+predict(modelLM, bowlLosers))/nrow(bowlResults)
+
+# Prediction
+sum(predict(modelGBM, bowlWinners) >
+      predict(modelGBM, bowlLosers))/nrow(bowlResults)
+```
+
