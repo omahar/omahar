@@ -1,0 +1,258 @@
+---
+title: NCAA College Bowl Pick'em Predictions
+author: Thomas Roh
+date: '2018-01-24'
+slug: ncaa-college-bowl-pick-em-predictions
+categories: 
+  - R
+tags: 
+  - R
+  - gbm
+  - rvest
+  - dplyr
+  - tidyr
+  - stringr
+  - caret
+  - stepAIC
+subtitle: Thomas Roh
+---
+
+
+
+<p>*<strong>Please read the <a href="http://www.cfbstats.com/blog/terms-of-use/">Terms of Use</a> if you are going to use the data</strong></p>
+<p>This is the code from my presentation last week at the Omaha R User Group Meeting. A fun competition every year is to pick the winners for each college football bowl. I wanted to build a data-driven model to help me make this year’s picks. This post will walk through the process of obtaining data for predictions, building a couple predictive models, and then compare the results of the models.</p>
+<div id="scraping-data" class="section level3">
+<h3>Scraping Data</h3>
+<p>I’m using the <a href="https://cran.r-project.org/web/packages/rvest/index.html"><code>rvest</code></a> to scrape some data that has been made available to the public at www.cfbstats.com. I recommend looking up some examples and using <a href="http://selectorgadget.com/">SelectorGadget</a> extension to look up css or xpath for queries.</p>
+<p>First, I want to get a list of all the NCAA FBS teams.</p>
+<pre class="r"><code>library(rvest)
+library(stringr)
+library(plyr)
+library(dplyr)
+library(tidyr)
+library(caret)
+
+cfbStats &lt;- read_html(&quot;http://www.cfbstats.com/&quot;)
+teams &lt;- cfbStats %&gt;%
+  html_nodes(&quot;.sub1 a&quot;) %&gt;%
+  html_text()
+teams[1:5]</code></pre>
+<pre><code>## [1] &quot;Air Force&quot;         &quot;Akron&quot;             &quot;Alabama&quot;          
+## [4] &quot;Appalachian State&quot; &quot;Arizona&quot;</code></pre>
+<p>You can click on a team and see some of the underlying data that is available. There are 130 teams so going through each link and acquiring the data is fairly time expensive. Instead, I’m going to acquire a vector of all of those links.</p>
+<pre class="r"><code>cfbLinks &lt;- cfbStats %&gt;%
+  html_nodes(&quot;.sub1 a&quot;) %&gt;%
+  html_attr(&quot;href&quot;) %&gt;%
+  paste0(&quot;http://www.cfbstats.com&quot;, .)
+cfbLinks[1:5]</code></pre>
+<pre><code>## [1] &quot;http://www.cfbstats.com/2017/team/721/index.html&quot;
+## [2] &quot;http://www.cfbstats.com/2017/team/5/index.html&quot;  
+## [3] &quot;http://www.cfbstats.com/2017/team/8/index.html&quot;  
+## [4] &quot;http://www.cfbstats.com/2017/team/27/index.html&quot; 
+## [5] &quot;http://www.cfbstats.com/2017/team/29/index.html&quot;</code></pre>
+<p>All of the data points are contained with html tables so I’m going to loop through and grab the tables for each team.</p>
+<pre class="r"><code>cfbTables &lt;- lapply(cfbLinks, function(site) {
+  Sys.sleep(1)
+  read_html(site) %&gt;%
+    html_table()
+})</code></pre>
+</div>
+<div id="data-cleaning" class="section level3">
+<h3>Data Cleaning</h3>
+<p>I looked at the statistics provided for each of the tables and I came up with a list of the ones that I wanted.</p>
+<pre class="r"><code>statNames &lt;- c(&quot;Points_per_Game&quot;,&quot;Total_First_Downs&quot;,&quot;Rushing_Yards_Mean&quot;,
+                &quot;Passing_Rating&quot;,&quot;Passing_Att_Comp_INT_TD&quot;,&quot;Total_Offense_YDs_per_Play&quot;,
+                &quot;Total_Offense_YDs&quot;,&quot;Punt_Returns&quot;,&quot;Kickoff_Returns&quot;,&quot;Punting_Yards&quot;,
+                &quot;INT_INTYards_INTTD&quot;,&quot;Fumbles_Total_Lost&quot;,&quot;Penalties_Total_Yards&quot;,
+                &quot;Third_Down&quot;,&quot;Fourth_Down&quot;,&quot;Red_Zone&quot;,&quot;Field_Goals&quot;,&quot;PAT_Kicking&quot;)
+
+# overall season team stats
+whichStats &lt;- c(1,3,5,7,9,10,11,12,14,16,18,19,20,22,24,26,28,30)
+teamStats &lt;- lapply(cfbTables, function(listElement) {
+  setNames(listElement[[1]][whichStats, ], c(&quot;Stat&quot;,&quot;Home&quot;,&quot;Opp&quot;))
+}) %&gt;%
+  setNames(teams) %&gt;%
+  bind_rows(.id = &quot;teamName&quot;) %&gt;%
+  mutate(Stat = rep(statNames, length(teams)))</code></pre>
+<p>The data isn’t structured the way I need it yet and numbers are in an awkward format.</p>
+<pre class="r"><code>home &lt;- teamStats %&gt;%
+  select(-Opp) %&gt;%
+  gather(team, value,-teamName,-Stat) %&gt;%
+  spread(Stat, value) %&gt;%
+  transmute(
+    teamName,
+    team,
+    FG_Perc = str_extract(Field_Goals, &quot;[0-9]+&quot;),
+    Fourth_Down_Perc = str_extract(Fourth_Down, &quot;[0-9]+&quot;),
+    Fumbles_Lost = str_extract(Fumbles_Total_Lost, &quot;[0-9]+$&quot;),
+    Passing_Rating = Passing_Rating,
+    INT = str_extract(INT_INTYards_INTTD, &quot;^[0-9]+&quot;),
+    Avg_Kickoff_Returns = Kickoff_Returns,
+    PAT_Perc = str_extract(PAT_Kicking, &quot;[0-9]+&quot;),
+    Penalty_Yards = str_extract(Penalties_Total_Yards, &quot;[0-9]+$&quot;),
+    Points_per_Game,
+    Avg_Punt_Returns = Punt_Returns,
+    Avg_Punting = Punting_Yards,
+    Red_Zone_Perc = str_extract(Red_Zone, &quot;[0-9]+&quot;),
+    Avg_Rush_Yards = Rushing_Yards_Mean,
+    Third_Down_Perc = str_extract(Third_Down, &quot;[0-9]+&quot;),
+    Total_First_Downs,
+    Total_Offense_YDs_per_Play,
+    Total_Offense_YDs = str_extract(Total_Offense_YDs, &quot;[0-9]+$&quot;)
+  ) %&gt;%
+  gather(stat, value, -teamName, -team) %&gt;%
+  mutate(stat = tolower(paste(team, stat, sep = &quot;_&quot;))) %&gt;%
+  select(-team) %&gt;%
+  spread(stat, value)
+home[ ,-1] &lt;- sapply(home[ ,-1], as.numeric)
+
+opp &lt;- setNames(home, sub(&quot;home_&quot;, &quot;opp_&quot;, names(home)))</code></pre>
+<p>Now, I have all the team stats that I selected and I can easily join the stats to the regular season games. The 2nd html table for each team contains their regular season schedule.</p>
+<pre class="r"><code>regSeason &lt;- lapply(cfbTables, `[[`, 2) %&gt;%
+  setNames(teams) %&gt;% 
+  bind_rows(.id = &quot;teamName&quot;) %&gt;%
+  filter(!is.na(Result),!str_detect(Opponent,&quot;\\+&quot;)) %&gt;%
+  mutate(opponent = str_replace(Opponent,&quot;@ &quot;,&quot;&quot;), 
+         opponent = str_replace(opponent,&quot;[0-9]+ &quot;,&quot;&quot;),
+         win = ifelse(str_detect(Result,&quot;W&quot;),1,0),
+         score = str_extract(Result,&quot;[0-9]+&quot;) %&gt;% as.numeric(),
+         opponent_score = as.numeric(str_extract(Result,&quot;[0-9]+$&quot;))) %&gt;%
+  dplyr::select(teamName,opponent,win,score,opponent_score)
+
+regSeason$opponent &lt;- str_replace_all(
+  regSeason$opponent,
+  c(
+  &quot;St\\.&quot; = &quot;State&quot;,
+  &quot;Ga\\.&quot; = &quot;Georgia&quot;,
+  &quot;La\\.&quot; = &quot;Louisiana&quot;,
+  &quot;Caro\\.&quot; = &quot;Carolina&quot;,
+  &quot;Fla\\.&quot; = &quot;Florida&quot;,
+  &quot;Ill\\.&quot; = &quot;Illinois&quot;,
+  &quot;Mich\\.&quot; = &quot;Michigan&quot;,
+  &quot;Miss\\.&quot; = &quot;Mississippi&quot;,
+  &quot;Ala\\.&quot; = &quot;Alabama&quot;,
+  &quot;Ky\\.&quot; = &quot;Kentucky&quot;,
+  &quot;Tenn\\.&quot; = &quot;Tennessee&quot;,
+  &quot;Hawaii&quot; = &quot;Hawai&#39;i&quot;,
+  &quot;Brigham Young&quot; = &quot;BYU&quot;,
+  &quot;Southern California&quot; = &quot;USC&quot;,
+  &quot;Southern Methodist&quot; = &quot;SMU&quot;,
+  &quot;Middle Tennessee State&quot; = &quot;Middle Tennessee&quot;,
+  &quot;Int\\&#39;l&quot; = &quot;International&quot;
+  )
+  )</code></pre>
+<p>Last, I’m going to set up a dataset that I can use for predicitive modeling. I’m also going to remove some missing values. These are due to FCS teams, which I do not have data for.</p>
+<pre class="r"><code>dt &lt;- regSeason %&gt;%
+  left_join(home, by = &#39;teamName&#39;) %&gt;%
+  left_join(opp, by = c(&#39;opponent&#39; = &#39;teamName&#39;))
+dt &lt;- na.omit(dt)</code></pre>
+</div>
+<div id="training-the-models" class="section level3">
+<h3>Training the Models</h3>
+<pre class="r"><code>#splitting the dataset into a training and testing set
+
+set.seed(82)
+i &lt;- createDataPartition(dt$score,
+                        p = .75,
+                        list = FALSE)
+trainSet &lt;- dt[i,-c(1:3,5)]
+testSet &lt;- dt[-i,-c(1:3,5)]</code></pre>
+<pre class="r"><code># Benchmark test against average score model
+RMSE(testSet$home_points_per_game, testSet$score)</code></pre>
+<pre><code>## [1] 12.67343</code></pre>
+<pre class="r"><code>R2(testSet$home_points_per_game, testSet$score)</code></pre>
+<pre><code>## [1] 0.2635834</code></pre>
+<pre class="r"><code>vars &lt;- paste0(names(dt)[-c(1:5)],collapse = &quot; + &quot;)
+vars &lt;- sub(&quot;+ home_points_per_game &quot;, &quot;&quot;, vars)
+formula &lt;- as.formula(paste0(&quot;score ~ &quot;,vars))
+formula</code></pre>
+<pre><code>## score ~ home_avg_kickoff_returns + home_avg_punt_returns + home_avg_punting + 
+##     home_avg_rush_yards + home_fg_perc + home_fourth_down_perc + 
+##     home_fumbles_lost + home_int + home_passing_rating + home_pat_perc + 
+##     home_penalty_yards + +home_red_zone_perc + home_third_down_perc + 
+##     home_total_first_downs + home_total_offense_yds + home_total_offense_yds_per_play + 
+##     opp_avg_kickoff_returns + opp_avg_punt_returns + opp_avg_punting + 
+##     opp_avg_rush_yards + opp_fg_perc + opp_fourth_down_perc + 
+##     opp_fumbles_lost + opp_int + opp_passing_rating + opp_pat_perc + 
+##     opp_penalty_yards + opp_points_per_game + opp_red_zone_perc + 
+##     opp_third_down_perc + opp_total_first_downs + opp_total_offense_yds + 
+##     opp_total_offense_yds_per_play</code></pre>
+<pre class="r"><code># Linear Stepwise Model
+modelLM &lt;- caret::train(formula, trainSet, method = &#39;lmStepAIC&#39;,
+                        trace = FALSE)
+
+# Score Stepwise Test Set
+predLM &lt;- predict(modelLM, testSet)
+RMSE(predLM,testSet$score)</code></pre>
+<pre><code>## [1] 11.99862</code></pre>
+<pre class="r"><code>R2(predLM,testSet$score)</code></pre>
+<pre><code>## [1] 0.3374131</code></pre>
+<pre class="r"><code># Gradient Boosted Trees
+modelGBM &lt;- caret::train(formula, trainSet, method = &#39;gbm&#39;,
+                         verbose = FALSE)
+
+# Score GBM Test Set
+predGBM &lt;- predict(modelGBM, testSet)
+RMSE(predGBM,testSet$score)</code></pre>
+<pre><code>## [1] 12.00465</code></pre>
+<pre class="r"><code>R2(predGBM,testSet$score)</code></pre>
+<pre><code>## [1] 0.3370974</code></pre>
+</div>
+<div id="comparing-the-predictions" class="section level3">
+<h3>Comparing the Predictions</h3>
+<pre class="r"><code>resultsPage &lt;- &#39;https://www.sports-reference.com/cfb/years/2017-bowls.html&#39;
+bowlResults &lt;- read_html(resultsPage) %&gt;%
+  html_table() %&gt;%
+  getElement(1) %&gt;%
+  setNames(c(&#39;date&#39;,
+             &#39;gametime&#39;,
+             &#39;bowl&#39;,
+             &#39;winner&#39;,
+             &#39;wpts&#39;,
+             &#39;loser&#39;,
+             &#39;lpts&#39;,
+             &#39;location&#39;,
+             &#39;na&#39;))
+bowlResults &lt;- bowlResults[,-9]
+bowlResults$winner &lt;- str_replace_all(
+  bowlResults$winner,
+  c(
+  &quot;Central Florida&quot; =  &quot;UCF&quot;,
+  &quot;Texas Christian&quot; = &quot;TCU&quot;,
+  &quot;Middle Tennessee State&quot; = &quot;Middle Tennessee&quot;
+  )
+  )
+
+bowlResults$loser &lt;- str_replace_all(
+  bowlResults$loser,
+  c(
+  &quot;Louisiana State&quot; = &quot;LSU&quot;,
+  &quot;Miami \\(FL\\)&quot; = &quot;Miami (Florida)&quot;,
+  &quot;Southern California&quot; = &quot;USC&quot;,
+  &quot;Alabama-Birmingham&quot; = &quot;UAB&quot;,
+  &quot;Southern Methodist&quot; = &quot;SMU&quot;
+  )
+  )
+
+bowlWinners &lt;- bowlResults %&gt;%
+  left_join(home, by = c(&#39;winner&#39; = &#39;teamName&#39;)) %&gt;%
+  left_join(opp, by = c(&#39;loser&#39; = &#39;teamName&#39;))
+bowlLosers &lt;- bowlResults %&gt;%
+  left_join(home, by = c(&#39;loser&#39; = &#39;teamName&#39;)) %&gt;%
+  left_join(opp, by = c(&#39;winner&#39; = &#39;teamName&#39;))</code></pre>
+<pre class="r"><code># Favored
+23/nrow(bowlResults)</code></pre>
+<pre><code>## [1] 0.575</code></pre>
+<pre class="r"><code># Baseline
+sum(bowlWinners$home_points_per_game &gt;
+  bowlLosers$home_points_per_game)/nrow(bowlResults)</code></pre>
+<pre><code>## [1] 0.425</code></pre>
+<pre class="r"><code># Stepwise Prediction
+sum(predict(modelLM, bowlWinners) &gt;
+predict(modelLM, bowlLosers))/nrow(bowlResults)</code></pre>
+<pre><code>## [1] 0.625</code></pre>
+<pre class="r"><code># Prediction
+sum(predict(modelGBM, bowlWinners) &gt;
+      predict(modelGBM, bowlLosers))/nrow(bowlResults)</code></pre>
+<pre><code>## [1] 0.625</code></pre>
+</div>
