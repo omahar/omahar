@@ -3,16 +3,18 @@ title: NCAA College Bowl Pick'em Predictions
 author: Thomas Roh
 date: '2018-01-24'
 slug: ncaa-college-bowl-pick-em-predictions
-categories: []
+categories: 
+  - R
 tags: 
-  -R
-  -gbm
-  -rvest
-  -dplyr
-  -tidyr
-  -stringr
-  -caret
-  -stepAIC
+  - R
+  - gbm
+  - rvest
+  - dplyr
+  - tidyr
+  - stringr
+  - caret
+  - stepAIC
+subtitle: Thomas Roh
 ---
 
 ***Please read the [Terms of Use](http://www.cfbstats.com/blog/terms-of-use/) if you are going to use the data**
@@ -36,6 +38,7 @@ First, I want to get a list of all the NCAA FBS teams.
 ```{r, message=FALSE}
 library(rvest)
 library(stringr)
+library(plyr)
 library(dplyr)
 library(tidyr)
 library(caret)
