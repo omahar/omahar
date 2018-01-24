@@ -198,7 +198,7 @@ testSet <- dt[-i,-c(1:3,5)]
 ```
 
 
-```{r}
+```{r, message=FALSE}
 # Benchmark test against average score model
 RMSE(testSet$home_points_per_game, testSet$score)
 R2(testSet$home_points_per_game, testSet$score)
