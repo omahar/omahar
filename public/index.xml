@@ -2,90 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Omaha R Users</title>
-    <link>/</link>
+    <link>https://omahar.org/</link>
     <description>Recent content on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 24 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://omahar.org/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>NCAA College Bowl Pick&#39;em Predictions</title>
-      <link>/post/ncaa-college-bowl-pick-em-predictions/</link>
+      <link>https://omahar.org/post/ncaa-college-bowl-pick-em-predictions/</link>
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/ncaa-college-bowl-pick-em-predictions/</guid>
+      <guid>https://omahar.org/post/ncaa-college-bowl-pick-em-predictions/</guid>
       <description>*Please read the Terms of Use if you are going to use the data
 This is the code from my presentation last week at the Omaha R User Group Meeting. A fun competition every year is to pick the winners for each college football bowl. I wanted to build a data-driven model to help me make this year’s picks. This post will walk through the process of obtaining data for predictions, building a couple predictive models, and then compare the results of the models.</description>
     </item>
     
     <item>
       <title>Omaha R User Group Meeting</title>
-      <link>/post/meeting0002/</link>
+      <link>https://omahar.org/post/meeting0002/</link>
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/meeting0002/</guid>
+      <guid>https://omahar.org/post/meeting0002/</guid>
       <description>January 18th, 2018 3:00-4:30 pm Do Space 7205 Dodge St Omaha, NE 68114 The January R User Group Meeting will include presentations from Branden Collingsworth on using the Spotify API in R to analyze song characteristics, Thomas Roh will show predictive modeling for College Football Bowl Predictions, and Kelly Pook will present on College Football Graph Theory.</description>
     </item>
     
     <item>
       <title>fbplot</title>
-      <link>/post/fbplot/</link>
+      <link>https://omahar.org/post/fbplot/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/fbplot/</guid>
+      <guid>https://omahar.org/post/fbplot/</guid>
       <description>Visualizing Data Using the Functional Boxplotlibrary(fda)data(growth)girls=growth$hgtfage=growth$ageThe Berkley growth data found in the fda package is an excellent example of functional data. Here we consider each growth curve to be one observation. With data of this type there are a couple of plotting avenues we might take: over plotting or sequential boxplots.
 These methods aren’t inherently “incorrect”, but limitations to their interpretability exist especially when encountered with larger data sets.</description>
     </item>
     
     <item>
       <title>Omaha R User Group Meeting</title>
-      <link>/post/meeting0001/</link>
+      <link>https://omahar.org/post/meeting0001/</link>
       <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/meeting0001/</guid>
+      <guid>https://omahar.org/post/meeting0001/</guid>
       <description>Omaha R User Group Meeting October 24th, 2017 3:00-4:30 pm Do Space 7205 Dodge St Omaha, NE 68114 Please join us for the first R Omaha User Group Meeting on Tuesday October 24th. We will have an introduction for the group, open discussion on the current state of R as well as two featured presentations. Branden Collingsworth will introduce the purrr package from the tidyverse and Garth Highland will showcase the use of functional boxplots.</description>
     </item>
     
     <item>
       <title>Submitting a Post with Blogdown</title>
-      <link>/post/submitting-a-post-with-blogdown/</link>
+      <link>https://omahar.org/post/submitting-a-post-with-blogdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/submitting-a-post-with-blogdown/</guid>
+      <guid>https://omahar.org/post/submitting-a-post-with-blogdown/</guid>
       <description>Set upYou will first need to set up an account on github and install git.
 Next, make a copy of the repository into your desired workspace. I like to keep all of my version controlled projects under one directory. Open up a command terminal of your choosing and use the following:
 cd #[working directory]git clone https://github.com/omahar/omahar.gitgit branch #[new branch]git checkout #[new branch]git push --set-upstream origin #[new branch]After the initial set up you can open the R Project in Rstudio and use the IDE to handle most of the work you will need to do in git.</description>
-    </item>
-    
-    <item>
-      <title>Projects</title>
-      <link>/page/projects/</link>
-      <pubDate>Fri, 08 Sep 2017 14:50:10 -0500</pubDate>
-      
-      <guid>/page/projects/</guid>
-      <description> Coming Soon </description>
-    </item>
-    
-    <item>
-      <title>Resources</title>
-      <link>/page/resources/</link>
-      <pubDate>Fri, 08 Sep 2017 14:10:57 -0500</pubDate>
-      
-      <guid>/page/resources/</guid>
-      <description>Omaha Analytics Forum The Omaha Analytics Forum promotes and supports advancement of analytics, predictive analytics, and data science within the professional community of Omaha. This group is a forum to share experiences and expertise for those struggling to get value out of data.
-Omaha Python Users Group The Omaha Python Users Group is comprised of individuals who use the Python programming languages for fun and/or profit. We encourage anyone using, learning or just interested in the language to join us.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/page/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/page/about/</guid>
-      <description>The mission of the Omaha R User Group is to promote the use of the R programming language and support the development of a supportive and welcoming community of R programmers by sharing our experiences and expertise with other users and those new to R.
-Any questions, comments, concerns you can contact us at &amp;ldquo;&amp;rdquo;</description>
     </item>
     
   </channel>

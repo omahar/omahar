@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Caret on Omaha R Users</title>
-    <link>/tags/caret/</link>
+    <link>https://omahar.org/tags/caret/</link>
     <description>Recent content in Caret on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 24 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/caret/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://omahar.org/tags/caret/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>NCAA College Bowl Pick&#39;em Predictions</title>
-      <link>/post/ncaa-college-bowl-pick-em-predictions/</link>
+      <link>https://omahar.org/post/ncaa-college-bowl-pick-em-predictions/</link>
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/ncaa-college-bowl-pick-em-predictions/</guid>
+      <guid>https://omahar.org/post/ncaa-college-bowl-pick-em-predictions/</guid>
       <description>*Please read the Terms of Use if you are going to use the data
 This is the code from my presentation last week at the Omaha R User Group Meeting. A fun competition every year is to pick the winners for each college football bowl. I wanted to build a data-driven model to help me make this year’s picks. This post will walk through the process of obtaining data for predictions, building a couple predictive models, and then compare the results of the models.</description>
     </item>
