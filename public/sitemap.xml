@@ -3,174 +3,194 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://omahar.org/post/ncaa-college-bowl-pick-em-predictions/</loc>
+    <loc>/post/ncaa-college-bowl-pick-em-predictions/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://omahar.org/post/meeting0002/</loc>
+    <loc>/post/meeting0002/</loc>
     <lastmod>2017-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://omahar.org/post/fbplot/</loc>
+    <loc>/post/fbplot/</loc>
     <lastmod>2017-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://omahar.org/post/meeting0001/</loc>
+    <loc>/post/meeting0001/</loc>
     <lastmod>2017-10-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://omahar.org/post/submitting-a-post-with-blogdown/</loc>
+    <loc>/post/submitting-a-post-with-blogdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://omahar.org/</loc>
+    <loc>/page/projects/</loc>
+    <lastmod>2017-09-08T14:50:10-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/page/resources/</loc>
+    <lastmod>2017-09-08T14:10:57-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/announcement/</loc>
+    <loc>/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/announcement/</loc>
     <lastmod>2017-12-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/blogdown/</loc>
+    <loc>/tags/blogdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/boxplot/</loc>
+    <loc>/tags/boxplot/</loc>
     <lastmod>2017-11-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/caret/</loc>
+    <loc>/tags/caret/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/dplyr/</loc>
+    <loc>/tags/dplyr/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/fda/</loc>
+    <loc>/tags/fda/</loc>
     <lastmod>2017-11-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/gbm/</loc>
+    <loc>/tags/gbm/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/git/</loc>
+    <loc>/tags/git/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/github/</loc>
+    <loc>/tags/github/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/markdown/</loc>
+    <loc>/tags/markdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/meeting/</loc>
+    <loc>/tags/meeting/</loc>
     <lastmod>2017-12-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/netlify/</loc>
+    <loc>/tags/netlify/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/post/</loc>
+    <loc>/page/</loc>
+    <lastmod>2017-09-08T14:50:10-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/r/</loc>
+    <loc>/tags/r/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/categories/r/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/rmarkdown/</loc>
+    <loc>/tags/rmarkdown/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/rstudio/</loc>
+    <loc>/tags/rstudio/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/rvest/</loc>
+    <loc>/tags/rvest/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/stepaic/</loc>
+    <loc>/tags/stepaic/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/stringr/</loc>
+    <loc>/tags/stringr/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2017-12-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/tags/tidyr/</loc>
+    <loc>/tags/tidyr/</loc>
     <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://omahar.org/categories/tutorial/</loc>
+    <loc>/categories/tutorial/</loc>
     <lastmod>2017-11-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

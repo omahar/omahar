@@ -4,6 +4,10 @@ date: 2017-09-08T14:10:57-05:00
 draft: true
 ---
 
+## [Omaha RUG Meetup](https://www.meetup.com/Omaha-R-Users-Group/)
+
+Sign up for the mailing list to receive news about upcoming events.
+
 ## [Omaha Analytics Forum](https://www.linkedin.com/groups/12028715)
 
 The Omaha Analytics Forum promotes and supports advancement of analytics, predictive analytics, and data science within the professional community of Omaha. This group is a forum to share experiences and expertise for those struggling to get value out of data.

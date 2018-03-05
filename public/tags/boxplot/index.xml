@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Boxplot on Omaha R Users</title>
-    <link>https://omahar.org/tags/boxplot/</link>
+    <link>/tags/boxplot/</link>
     <description>Recent content in Boxplot on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 02 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://omahar.org/tags/boxplot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/boxplot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>fbplot</title>
-      <link>https://omahar.org/post/fbplot/</link>
+      <link>/post/fbplot/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/post/fbplot/</guid>
+      <guid>/post/fbplot/</guid>
       <description>Visualizing Data Using the Functional Boxplotlibrary(fda)data(growth)girls=growth$hgtfage=growth$ageThe Berkley growth data found in the fda package is an excellent example of functional data. Here we consider each growth curve to be one observation. With data of this type there are a couple of plotting avenues we might take: over plotting or sequential boxplots.
 These methods aren’t inherently “incorrect”, but limitations to their interpretability exist especially when encountered with larger data sets.</description>
     </item>

@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Meeting on Omaha R Users</title>
-    <link>https://omahar.org/tags/meeting/</link>
+    <link>/tags/meeting/</link>
     <description>Recent content in Meeting on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 28 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://omahar.org/tags/meeting/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/meeting/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Omaha R User Group Meeting</title>
-      <link>https://omahar.org/post/meeting0002/</link>
+      <link>/post/meeting0002/</link>
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/post/meeting0002/</guid>
+      <guid>/post/meeting0002/</guid>
       <description>January 18th, 2018 3:00-4:30 pm Do Space 7205 Dodge St Omaha, NE 68114 The January R User Group Meeting will include presentations from Branden Collingsworth on using the Spotify API in R to analyze song characteristics, Thomas Roh will show predictive modeling for College Football Bowl Predictions, and Kelly Pook will present on College Football Graph Theory.</description>
     </item>
     
     <item>
       <title>Omaha R User Group Meeting</title>
-      <link>https://omahar.org/post/meeting0001/</link>
+      <link>/post/meeting0001/</link>
       <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://omahar.org/post/meeting0001/</guid>
+      <guid>/post/meeting0001/</guid>
       <description>Omaha R User Group Meeting October 24th, 2017 3:00-4:30 pm Do Space 7205 Dodge St Omaha, NE 68114 Please join us for the first R Omaha User Group Meeting on Tuesday October 24th. We will have an introduction for the group, open discussion on the current state of R as well as two featured presentations. Branden Collingsworth will introduce the purrr package from the tidyverse and Garth Highland will showcase the use of functional boxplots.</description>
     </item>
     

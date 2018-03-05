@@ -113,7 +113,7 @@ the website and your post will be published to the website.
 
 ## Workflow
 
-```{r, eval = TRUE, echo = FALSE, message=FALSE}
+```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE}
 library(DiagrammeR)
 dotText <- "
 
