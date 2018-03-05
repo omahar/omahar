@@ -21,7 +21,7 @@ googleAnalytics = "UA-107704129-1"
   highlightjsVersion = "9.11.0"
   highlightjsLang = ["r", "yaml"]
   highlightjsTheme = "github"
-  commit = "https://github.com/omahar/omahar/"
+  commit = "https://github.com/omahar/omahar/master/"
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 [Author]
@@ -72,8 +72,13 @@ googleAnalytics = "UA-107704129-1"
     name = "Meetup"
     url = "https://www.meetup.com/Omaha-R-Users-Group/"
     weight = 5
-    
+
+[[menu.main]]
+    name = "Mailing List"
+    url = "https://mailto:omahar-list@meetup.com"
+    weight = 6
+
 [[menu.main]]
     name = "Tags"
     url = "tags"
-    weight = 6
+    weight = 7

@@ -9,4 +9,4 @@ language and support the development of a supportive and welcoming community of
 R programmers by sharing our experiences and expertise with other users and 
 those new to R.
 
-Any questions, comments, concerns you can contact us at ""
+Any questions, comments, concerns you can contact us at thomas.roh@hdrinc.com.
