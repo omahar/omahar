@@ -5,10 +5,19 @@
     <link>/tags/meeting/</link>
     <description>Recent content in Meeting on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 28 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/meeting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Omaha R User Group Meeting</title>
+      <link>/post/omaha-r-user-group-meeting/</link>
+      <pubDate>Fri, 23 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/omaha-r-user-group-meeting/</guid>
+      <description> March 23rd, 2018 3:00-5:00 pm Do Space 7205 Dodge St Omaha, NE 68114  </description>
+    </item>
     
     <item>
       <title>Omaha R User Group Meeting</title>
