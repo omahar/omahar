@@ -2,7 +2,7 @@
 title: Omaha R User Group Meeting
 author: Thomas Roh
 date: '2018-03-23'
-slug: omaha-r-user-group-meeting
+slug: omaha-r-user-group-meeting0003
 categories: []
 tags:
   - meeting
