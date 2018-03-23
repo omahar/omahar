@@ -24,7 +24,7 @@ subtitle: Thomas Roh
 <script src="/rmarkdown-libs/grViz-binding/grViz.js"></script>
 
 
-<div id="set-up" class="section level2">
+<section id="set-up" class="level2">
 <h2>Set up</h2>
 <p>You will first need to set up an account on <a href="https://www.github.com"><strong>github</strong></a> and install <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"><strong>git</strong></a>.</p>
 <p>Next, make a copy of the repository into your desired workspace. I like to keep all of my version controlled projects under one directory. Open up a command terminal of your choosing and use the following:</p>
@@ -38,31 +38,26 @@ git push --set-upstream origin #[new branch]</code></pre>
 <hr />
 <p>The <a href="https://bookdown.org/yihui/blogdown/"><code>blogdown</code></a> package is an R interface to creating static web pages with Hugo. I will be using the <a href="https://www.rstudio.com/"><strong>Rstudio</strong></a> IDE and this package to do the majority of the heavy lifting.</p>
 <pre class="r"><code>devtools::install_github(&#39;rstudio/blogdown&#39;)</code></pre>
-</div>
-<div id="creating-a-new-post" class="section level2">
+</section>
+<section id="creating-a-new-post" class="level2">
 <h2>Creating a New Post</h2>
 <p>You can use the command line to create a new post:</p>
 <pre class="r"><code>blogdown::new_post(&#39;Submitting a Post with Blogdown&#39;)</code></pre>
 <p>or you can use the Rstudio addin that is provided:</p>
-<div class="figure">
-<img src="./img/new_post_addin.PNG" />
-
-</div>
+<p><img src="./img/new_post_addin.PNG" /></p>
 <p>Blogdown supports both R Markdown or Markdown. You now have a templated document set up to edit. Write your post and once you are satisfied that you are ready to publish, re-build the site:</p>
 <pre class="r"><code>blogdown::build_site()</code></pre>
 <p>Check for errors and visually inspect:</p>
 <pre class="r"><code>blogdown::serve_site()</code></pre>
-</div>
-<div id="submitting-a-post-to-the-website-repository" class="section level2">
+</section>
+<section id="submitting-a-post-to-the-website-repository" class="level2">
 <h2>Submitting a Post to the Website Repository</h2>
 <p>When you are ready to publish your post, you will need to head to the github repository for the website. To submit your post for publication, create a pull request to merge your branch with the master.</p>
 <p><img src = "./img/pull_request.png" width = "75%" height = "75%"></p>
 <p>You will need to resolve any conflicts when merging the branches. Be wary of overwriting other files already in the master branch. Once the pull request is sent, it will need to pass a review before being published. When the changes are accepted and merged into the master, Netlify will rebuild the new part of the website and your post will be published to the website.</p>
-</div>
-<div id="workflow" class="section level2">
+</section>
+<section id="workflow" class="level2">
 <h2>Workflow</h2>
-<pre><code>## Warning: replacing previous import &#39;scales::viridis_pal&#39; by
-## &#39;viridis::viridis_pal&#39; when loading &#39;DiagrammeR&#39;</code></pre>
 <div id="htmlwidget-1" style="width:672px;height:480px;" class="grViz html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"\n\ndigraph workflow {\n\n  graph[compound = true, center = true, rankdir = LR]\n\n  subgraph cluster0 {\n  graph [label = \"Local Repository\", fontsize = 50, labelloc = true]\n  \n  node [fontsize = 30]\n  {rank = same; \"new_post\"; \"git commit\"; \"git push\"; \"git pull\"}\n  \n\n  \"git pull\" -> \"new_post\" -> \"git commit\" -> \"git push\"\n  \"git push\" -> \"git commit\"\n  \n  }\n\n  subgraph cluster1 {\n  graph [label = \"Remote Repository\", fontsize = 50, labelloc = true]\n\n  node [fontsize = 30]\n  {rank = same; \"pull request\"; \"review\"; \"merge\"}\n  \n  \"git push\" -> \"pull request\" -> \"review\" -> \"git commit\"\n  \"review\" -> \"merge\"\n  }\n\n  subgraph cluster2 {\n  graph [label = \"Web\", fontsize = 50, labelloc = true]\n\n  node [fontsize = 30]\n  {rank = same; \"merge\", \"netlify\"}\n\n  \"merge\" -> \"netlify\" -> \"publish\"\n  }\n  \n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-</div>
+</section>

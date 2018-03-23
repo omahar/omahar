@@ -21,7 +21,7 @@ subtitle: Thomas Roh
 
 <p>*<strong>Please read the <a href="http://www.cfbstats.com/blog/terms-of-use/">Terms of Use</a> if you are going to use the data</strong></p>
 <p>This is the code from my presentation last week at the Omaha R User Group Meeting. A fun competition every year is to pick the winners for each college football bowl. I wanted to build a data-driven model to help me make this year’s picks. This post will walk through the process of obtaining data for predictions, building a couple predictive models, and then compare the results of the models.</p>
-<div id="scraping-data" class="section level3">
+<section id="scraping-data" class="level3">
 <h3>Scraping Data</h3>
 <p>I’m using the <a href="https://cran.r-project.org/web/packages/rvest/index.html"><code>rvest</code></a> to scrape some data that has been made available to the public at www.cfbstats.com. I recommend looking up some examples and using <a href="http://selectorgadget.com/">SelectorGadget</a> extension to look up css or xpath for queries.</p>
 <p>First, I want to get a list of all the NCAA FBS teams.</p>
@@ -56,8 +56,8 @@ cfbLinks[1:5]</code></pre>
   read_html(site) %&gt;%
     html_table()
 })</code></pre>
-</div>
-<div id="data-cleaning" class="section level3">
+</section>
+<section id="data-cleaning" class="level3">
 <h3>Data Cleaning</h3>
 <p>I looked at the statistics provided for each of the tables and I came up with a list of the ones that I wanted.</p>
 <pre class="r"><code>statNames &lt;- c(&quot;Points_per_Game&quot;,&quot;Total_First_Downs&quot;,&quot;Rushing_Yards_Mean&quot;,
@@ -146,8 +146,8 @@ regSeason$opponent &lt;- str_replace_all(
   left_join(home, by = &#39;teamName&#39;) %&gt;%
   left_join(opp, by = c(&#39;opponent&#39; = &#39;teamName&#39;))
 dt &lt;- na.omit(dt)</code></pre>
-</div>
-<div id="training-the-models" class="section level3">
+</section>
+<section id="training-the-models" class="level3">
 <h3>Training the Models</h3>
 <pre class="r"><code>#splitting the dataset into a training and testing set
 
@@ -197,8 +197,8 @@ RMSE(predGBM,testSet$score)</code></pre>
 <pre><code>## [1] 12.00465</code></pre>
 <pre class="r"><code>R2(predGBM,testSet$score)</code></pre>
 <pre><code>## [1] 0.3370974</code></pre>
-</div>
-<div id="comparing-the-predictions" class="section level3">
+</section>
+<section id="comparing-the-predictions" class="level3">
 <h3>Comparing the Predictions</h3>
 <pre class="r"><code>resultsPage &lt;- &#39;https://www.sports-reference.com/cfb/years/2017-bowls.html&#39;
 bowlResults &lt;- read_html(resultsPage) %&gt;%
@@ -255,4 +255,4 @@ predict(modelLM, bowlLosers))/nrow(bowlResults)</code></pre>
 sum(predict(modelGBM, bowlWinners) &gt;
       predict(modelGBM, bowlLosers))/nrow(bowlResults)</code></pre>
 <pre><code>## [1] 0.625</code></pre>
-</div>
+</section>
