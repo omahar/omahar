@@ -65,6 +65,15 @@
     </item>
     
     <item>
+      <title>Flexdashboard</title>
+      <link>/tags/flexdashboard/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/flexdashboard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gbm</title>
       <link>/tags/gbm/</link>
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
@@ -130,7 +139,7 @@
     <item>
       <title>Rmarkdown</title>
       <link>/tags/rmarkdown/</link>
-      <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/rmarkdown/</guid>
       <description></description>
@@ -151,6 +160,15 @@
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/rvest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>/tags/slides/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/slides/</guid>
       <description></description>
     </item>
     
