@@ -8,7 +8,7 @@ tags:
   - rmarkdown
   - flexdashboard
   - slides
-subtitle: ''
+subtitle: 'Yihui Xie'
 ---
 
 <iframe src="https://slides.yihui.name/2018-flexdashboard-Omaha-Yihui-Xie.html" width ="100%" height="600px" frameborder=0></iframe>
