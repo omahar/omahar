@@ -8,7 +8,7 @@ tags:
   - R
   - doAzureParallel
   - Azure
-subtitle: ''
+subtitle: 'Matt Sharkey'
 ---
 
-<iframe src="http://www.hinttank.com/ridiculously-parallel" width ="100%" height="400px" frameborder=0></iframe>
+[Link to blog post](http://www.hinttank.com/ridiculously-parallel)
