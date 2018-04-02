@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Azure</title>
+      <link>/tags/azure/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Blogdown</title>
       <link>/tags/blogdown/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
@@ -43,6 +52,15 @@
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/caret/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Doazureparallel</title>
+      <link>/tags/doazureparallel/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/doazureparallel/</guid>
       <description></description>
     </item>
     
@@ -130,7 +148,7 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
