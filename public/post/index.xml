@@ -5,10 +5,19 @@
     <link>/post/</link>
     <description>Recent content in Posts on Omaha R Users</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 07 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Omaha R User Group Meeting</title>
+      <link>/post/meeting0005/</link>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/meeting0005/</guid>
+      <description> September 20th, 2018 3:00-5:00 pm Barbara Weitz Community Engagement Center (UNO) - OPPD Community Dialogue Room II 6401 Dodge St Omaha, NE 68182  </description>
+    </item>
     
     <item>
       <title>Omaha R User Group Meeting</title>
