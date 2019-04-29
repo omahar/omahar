@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Building Your First Shiny Database Application</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Matthew Sharkey | msharkey3434@gmail.com" />
+    <meta name="date" content="2019-04-03" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Building Your First Shiny Database Application
+### Matthew Sharkey | <a href="mailto:msharkey3434@gmail.com">msharkey3434@gmail.com</a>
+### 2019-04-03
+
+---
+
+
+
+
+
+
+
+# About Me
+
+Matthew Sharkey, MBA, MS-BIA | Data Engineer @ HDR
+&lt;div&gt;
+&lt;center&gt;
+
+![me](C:/Users/mshar/OneDrive/Documents/R_UG_Demo/04-Images/legoGuy.jpg)
+
+
+
+&lt;/center&gt;
+&lt;div&gt;
+
+---
+
+
+# Agenda
+
+1. RDBMS Use Cases
+
+2. Building and Managing Connections
+
+3. Performance &amp; Optimization
+
+
+---
+
+# Why use an RDBMS?
+
+
+- Potential Performance Gains
+
+--
+
+  + Indexing - Ordering data by a key e.g. last names in a phone book
+
+--
+
+  + Parallelism - Query Optimizer decides when to use parallelism based on cost estimates
+
+--
+
+- Stability - In 1974, IBM began developing first RDBMS
+
+--
+
+- Security - Auditing, Encryption, Data Control Language (DCL)
+
+--
+
+- Transactions (ACID)
+
+--
+
+- Historical Tracking - Temporal Tables, Slowly Changing Dimensions, Triggers
+
+--
+
+- But it's not the right tool for every job!
+
+---
+## So Help Me Codd!
+
+
+&lt;br&gt;
+&lt;center&gt;
+&gt;IT should never forget that technology is a means to an end, and not an end in itself...
+
+--
+
+&gt;...Attempting to force one technology or tool to satisfy a particular need for which another tool is more effective and efficient is like attempting to drive a screw into a wall with a hammer when a screwdriver is at hand: the screw may eventually enter the wall but at what cost?
+
+&lt;br&gt;
+&lt;center&gt;
+E.F. Codd, et al. 1998. Providing Olap to User-Analysts: An It Mandate. https://bit.ly/2Okyz2H.
+
+
+---
+
+class: inverse, center, middle
+
+# Building and Managing Connections
+
+
+---
+
+
+
+```r
+myconnection &lt;- DBI::dbConnect(odbc::odbc(),
+                          Driver= 'SQL Server',
+                          Server = '.\\snapman',
+                          Database = 'Cab_Demo',
+                          Trusted_Connection='yes')
+```
+
+--
+
+
+```r
+dbGetQuery(myconnection,"Select GetDate()")
+```
+
+```
+##                      
+## 1 2019-04-03 22:50:33
+```
+
+```r
+dbDisconnect(myconnection)
+```
+
+---
+
+
+## Common Connection Problems
+
+.pull-left[
+1. Wrong connection string format 
+    
+1. Misspelled something
+
+1. Permissions
+
+1. Driver
+
+1. Wrong port number
+
+1. Firewall
+]
+
+.pull-right[
+&lt;center&gt;
+&lt;iframe src="https://giphy.com/embed/Ym0zs6Ms4vgwU" width="380" height="227" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/mr-robot-rami-malek-its-so-good-Ym0zs6Ms4vgwU"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/center&gt;
+]
+
+
+---
+
+## Manual vs Pool
+
+
+
+
+```r
+*  dbConnect(
+    odbc::odbc(),Driver= myDriver,Server = myServer
+                ,Database = myDatabase,Trusted_Connection='yes')
+  dbGetQuery(con,query)
+  dbDisconnect(con)  
+```
+--
+
+```r
+*  dbPool(
+     odbc::odbc(),Driver= myDriver,Server = myServer
+                  ,Database = myDatabase,Trusted_Connection='yes')
+```
+--
+
+```r
+rs &lt;- microbenchmark(dbconnectworkload() 
+                    ,dbpoolworkload(),times = 100)
+```
+
+---
+
+## Manual vs Pool Benchmark Results
+
+&lt;img src="Presentation_files/figure-html/boxplot-1.png" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+class: inverse, center, middle
+
+# Performance &amp; Optimization
+
+---
+
+
+## File vs Table Query
+
+&lt;br&gt;
+&gt; If your data fits in memory there is no advantage to putting it in a database: it will only be slower and more frustrating.
+
+&lt;br&gt;
+Hadley Wickham, RStudio, Edgar Ruiz. 2019. Dbplyr: A dplyr Back End for Databases. https://CRAN.R-project.org/package=dbplyr.
+
+&lt;br&gt;
+
+--
+
+- Frustrating --&gt; Possibly
+
+--
+
+- Slower --&gt; It Depends
+
+---
+
+## File Storage vs Table
+
+
+ Same data but one stored as CSV and one stored as table 
+ &lt;div&gt;
+ Data source:NYC Yellow Taxi Trips https://on.nyc.gov/2tn71Qq
+ 
+
+
+
+```r
+trips_fs &lt;- read_csv(cab_fileloc)
+trips_db &lt;- tbl(con, "yellow_tripdata_2018-01")
+```
+--
+
+```r
+fs &lt;- function(){csvquery&lt;- trips_fs %&gt;% 
+    filter(tpep_dropoff_datetime &gt;= '2018-01-02 07:28:00'
+          ,tpep_dropoff_datetime &lt;= '2018-01-02 07:30:00') %&gt;%
+    summarise(pcount= n())
+  rs&lt;- suppressMessages(compute(csvquery))}
+```
+--
+
+```r
+db &lt;- function(){sqltable &lt;- trips_db %&gt;% 
+    filter(tpep_dropoff_datetime &gt;= '01-02-2018 13:28'
+           ,tpep_dropoff_datetime &lt;= '01/02/2018 13:30')  %&gt;%
+    summarise(pcount= n())
+  rs1&lt;-suppressMessages(compute(sqltable))}
+```
+
+
+---
+
+## Benchmarking
+
+File storage is faster
+
+
+&lt;img src="Presentation_files/figure-html/boxplot2-1.png" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## But...
+
+Indexing makes a difference
+
+
+
+
+```r
+dbExecute(con,
+'CREATE NONCLUSTERED INDEX nc_yellow_trip
+ ON [yellow_tripdata_2018-01](tpep_dropoff_datetime)'
+ )
+```
+
+--
+
+---
+
+## Benchmark with Index
+
+The tables have turned
+
+&lt;img src="Presentation_files/figure-html/boxplot3-1.png" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
+---
+
+
+## Indexes - The Keys to Query Performance
+
+
+Good columns for indexing
+
+--
+
+- Remember FOC
+
+--
+
+F - Filtering
+
+```r
+mtcars %&gt;% filter(cyl == 4)
+```
+--
+
+O- Ordering
+
+```r
+mtcars %&gt;% filter(cyl == 4) %&gt;% arrange(disp)
+```
+--
+
+C- Covering (Any remaining column in the SELECT)
+
+```r
+mtcars %&gt;% filter(cyl == 4) %&gt;% arrange(disp) %&gt;% select(mpg)
+```
+--
+
+```sql
+CREATE INDEX ix_mtcars ON mtcars(cyl,disp)
+INCLUDE (mpg)
+```
+---
+
+## Best index for this query?
+
+
+```r
+trips_db %&gt;%
+      mutate(Trip_Date = as.Date(tpep_dropoff_datetime))  %&gt;% 
+      filter(tpep_dropoff_datetime &gt;= '01/01/2018',
+             tpep_dropoff_datetime &lt; '01/04/2018',
+             trip_distance &gt;= 0,
+             trip_distance &lt;= 5)  %&gt;%
+      group_by(Trip_Date) %&gt;%
+      summarise(Trip_Count= n())
+```
+
+
+--
+
+- Per FOC, start with tpep_dropoff_datetime and trip_distance
+
+--
+
+
+```sql
+CREATE INDEX ix_yellow_cab 
+ON yellow_trip(tpep_dropoff_datetime,trip_distance)
+```
+
+--
+
+- Test performance before and after index
+
+- Indexing trade-off = slower writes
+
+---
+
+## Demo
+
+- Yellow Cab Dashboard
+
+![](c:/users/mshar/OneDrive/Documents/R_UG_Demo/Cab_Dashboard.png)
+
+
+---
+
+
+# Recap
+
+- Use the right tool for the job
+
+--
+
+- Troubleshooting connections
+
+--
+
+- Performance
+
+--
+
+Presentation write up on blog [www.hintank.com](https://www.hinttank.com/)
+
+--
+
+Demo Application on github https://github.com/msharkey/shinybuilder
+
+
+---
+
+class: center, middle
+
+# Thank You
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

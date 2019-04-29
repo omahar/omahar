@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Presentations on Omaha R Users</title>
+    <link>/presentations/</link>
+    <description>Recent content in Presentations on Omaha R Users</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="/presentations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/presentations/building_your_first_shiny_database_application/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/building_your_first_shiny_database_application/</guid>
+      <description>Building Your First Shiny Database Applicationclass: center, middle, inverse, title-slide# Building Your First Shiny Database Application### Matthew Sharkey | msharkey3434@gmail.com### 2019-04-03---# About MeMatthew Sharkey, MBA, MS-BIA | Data Engineer @ HDR&amp;lt;div&amp;gt;&amp;lt;center&amp;gt;![me](C:/Users/mshar/OneDrive/Documents/R_UG_Demo/04-Images/legoGuy.jpg)&amp;lt;/center&amp;gt;&amp;lt;div&amp;gt;---# Agenda1. RDBMS Use Cases2. Building and Managing Connections3. Performance &amp;amp; Optimization---# Why use an RDBMS?- Potential Performance Gains--+ Indexing - Ordering data by a key e.</description>
+    </item>
+    
+  </channel>
+</rss>
